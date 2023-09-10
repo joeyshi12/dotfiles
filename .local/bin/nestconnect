@@ -1,0 +1,8 @@
+#!/bin/sh
+
+DEVICE=CC:F4:11:D2:71:DE
+if [[ "$(bluetoothctl devices)" =~ "${DEVICE}" ]]; then
+    bluetoothctl connect ${DEVICE}
+else
+    notify-send "${DEVICE} not found; try rescanning"
+fi
