@@ -48,10 +48,10 @@ alias dlg='docker logs'
 alias dv='docker volume'
 
 # Tmux
-alias t="tmux"
-alias ta="tmux attach-session"
-alias tl="tmux list-sessions"
-alias tk="tmux kill-session"
+alias tm="tmux"
+alias tma="tmux attach-session"
+alias tml="tmux list-sessions"
+alias tmk="tmux kill-session"
 
 # Compiles and executes C file and removes binary
 # $1 path to the C file
