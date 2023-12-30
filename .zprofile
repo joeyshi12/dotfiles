@@ -13,8 +13,6 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 
 export SSB_HOME="${XDG_DATA_HOME}"
-export NVM_DIR="${XDG_DATA_HOME}/nvm"
-export WINEPREFIX="${XDG_DATA_HOME}/wineprefixes/default"
 
-export BAT_THEME="Catppuccin-mocha"
-export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

@@ -5,7 +5,6 @@ set scrolloff 10
 set hidden!
 set info size:time
 set previewer ~/.config/lf/scope
-set cleaner ~/.config/lf/cleaner
 
 map <enter> shell
 

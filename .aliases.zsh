@@ -2,7 +2,6 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias v="$EDITOR"
 alias sv="sudo -E $EDITOR"
-alias m="neomutt"
 alias copy="xclip -sel c"
 alias diff="diff --color"
 
@@ -23,6 +22,7 @@ alias gb="git branch"
 alias gc="git commit -vm"
 alias gca="git commit -vam"
 alias gcl="git clone --recurse-submodules"
+alias gm="git merge"
 alias gl="git pull"
 alias gup="git pull --rebase"
 alias gp="git push"
@@ -37,7 +37,6 @@ alias gr="git remote"
 # Docker
 alias dc='docker-compose'
 alias dim='docker image'
-alias drmi='docker rmi'
 alias dps='docker ps'
 alias db='docker build'
 alias dr='docker run'
