@@ -14,7 +14,6 @@ zmodload zsh/complist
 compinit -d "${HOME}/.cache/zsh/zcompdump-${ZSH_VERSION}"
 _comp_options+=(globdots) # Include hidden files.
 
-# History in cache directory
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE="${XDG_STATE_HOME}/zsh_history"
