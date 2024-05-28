@@ -4,6 +4,7 @@ alias v="$EDITOR"
 alias sv="sudo -E $EDITOR"
 alias copy="xclip -sel c"
 alias diff="diff --color"
+alias open="xdg-open"
 
 # Pacman
 alias pacs="sudo pacman --color=auto -S"
