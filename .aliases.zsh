@@ -6,12 +6,12 @@ alias copy="xclip -sel c"
 alias diff="diff --color"
 
 # Pacman
-alias pacs="sudo pacman -S"
-alias pacss="pacman -Ss"
-alias pacqs="pacman -Qs"
-alias pacsyu="sudo pacman -Syu"
-alias pacrsn="sudo pacman -Rsn"
-alias pacsc="sudo pacman -Sc"
+alias pacs="sudo pacman --color=auto -S"
+alias pacss="pacman --color=auto -Ss"
+alias pacqs="pacman --color=auto -Qs"
+alias pacsyu="sudo pacman --color=auto -Syu"
+alias pacrsn="sudo pacman --color=auto -Rsn"
+alias pacsc="sudo pacman --color=auto -Sc"
 
 # Git
 alias g="git"

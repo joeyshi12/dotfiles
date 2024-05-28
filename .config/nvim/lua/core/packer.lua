@@ -34,14 +34,14 @@ return require('packer').startup(function(use)
     use { 'KeitaNakamura/tex-conceal.vim' }
     use { 'itchyny/lightline.vim' }
     use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-    use {
         'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional
         },
+    }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use { 'lewis6991/gitsigns.nvim' }
     use {

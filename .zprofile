@@ -1,8 +1,8 @@
 export PATH="${HOME}/.local/bin:${PATH}"
-
 export VISUAL="nvim"
 export EDITOR="${VISUAL}"
 
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#introduction
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
@@ -13,6 +13,3 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 
 export SSB_HOME="${XDG_DATA_HOME}"
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
