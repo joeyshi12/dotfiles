@@ -53,12 +53,6 @@ alias tma="tmux attach-session"
 alias tml="tmux list-sessions"
 alias tmk="tmux kill-session"
 
-# Compiles and executes C file and removes binary
-# $1 path to the C file
-crun() {
-    gcc "$1" && ./a.out "${@:2}" && rm a.out
-}
-
 # lf with ueberzug image preview
 lf() {
     [ ! -d "${XDG_CACHE_HOME}/lf" ] && mkdir -p "${XDG_CACHE_HOME}/lf"

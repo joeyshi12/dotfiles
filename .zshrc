@@ -17,7 +17,7 @@ _comp_options+=(globdots) # Include hidden files.
 # History in cache directory
 HISTSIZE=100000
 SAVEHIST=100000
-HISTFILE="${XDG_CACHE_HOME}/zsh_history"
+HISTFILE="${XDG_STATE_HOME}/zsh_history"
 
 # Vim-like key-bindings
 set -o vi
