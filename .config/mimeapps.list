@@ -26,6 +26,8 @@ image/svg+xml=org.gnome.eog.desktop
 image/svg+xml-compressed=org.gnome.eog.desktop
 image/vnd.wap.wbmp=org.gnome.eog.desktop
 image/x-icns=org.gnome.eog.desktop
+x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
 
 [Added Associations]
 image/bmp=org.gnome.eog.desktop;

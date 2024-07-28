@@ -5,6 +5,7 @@ alias sv="sudo -E $EDITOR"
 alias copy="xclip -sel c"
 alias diff="diff --color"
 alias open="xdg-open"
+alias ff="fastfetch"
 
 # Pacman
 alias pacs="sudo pacman --color=auto -S"
@@ -14,6 +15,15 @@ alias pacqe="pacman --color=auto -Qe"
 alias pacsyu="sudo pacman --color=auto -Syu"
 alias pacrsn="sudo pacman --color=auto -Rsn"
 alias pacsc="sudo pacman --color=auto -Sc"
+
+# yay
+alias yays="yay --color=auto -S"
+alias yayss="yay --color=auto -Ss"
+alias yayqs="yay --color=auto -Qs"
+alias yayqe="yay --color=auto -Qe"
+alias yaysyu="yay --color=auto -Syu"
+alias yayrsn="yay --color=auto -Rsn"
+alias yaysc="yay --color=auto -Sc"
 
 # Git
 alias g="git"
