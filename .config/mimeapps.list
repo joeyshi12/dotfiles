@@ -28,6 +28,7 @@ image/vnd.wap.wbmp=org.gnome.eog.desktop
 image/x-icns=org.gnome.eog.desktop
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
+x-scheme-handler/discord-1223291656732934377=discord-1223291656732934377.desktop
 
 [Added Associations]
 image/bmp=org.gnome.eog.desktop;
