@@ -3,22 +3,16 @@ alias grep='grep --color=auto'
 
 alias v='vim'
 alias sv='sudo -E vim'
-alias tm="tmux"
-alias tma="tmux attach"
 
 # Docker
 alias dc='docker-compose'
-alias di='docker image'
-alias dirm='docker image rm'
-alias dr='docker container run'
-alias dst='docker container start'
-alias drs='docker container restart'
-alias drm='docker container rm'
+alias dim='docker images'
+alias drmi='docker rmi'
 alias dps='docker ps'
-alias dpsa='docker ps -a'
-alias dbl='docker build'
-alias dstp='docker stop'
-alias dstpa='docker stop $(docker ps -q)'
+alias db='docker build'
+alias dr='docker run'
+alias dst='docker stop'
+alias drm='docker rm'
 alias da='docker attach'
 alias dlg='docker logs'
 alias dv='docker volume'
