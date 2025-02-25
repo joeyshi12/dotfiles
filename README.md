@@ -1,13 +1,9 @@
-# dotfiles-minimal
+# dotfiles
 
-## Dependencies
+Dotfiles for my Arch Linux system running Gnome desktop.
 
-- vim-plug
+## Getting started
 
-```sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-- lf (terminal file manager)
-    - [Releases page](https://github.com/gokcehan/lf/releases)
+- Clone dotfiles into `~/.dotfiles`
+- Run `./boostrap.sh` to create soft links for dotfiles
+- Install dependencies from `pkglist` with `pacman` and `pkglocallist` with `yay`
