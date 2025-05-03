@@ -64,6 +64,10 @@ alias da='docker attach'
 alias dlg='docker logs'
 alias dv='docker volume'
 
+dsh() {
+    docker exec -it $1 "/bin/sh"
+}
+
 # Tmux
 alias tm="tmux"
 alias tma="tmux attach-session"

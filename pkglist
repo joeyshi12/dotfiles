@@ -24,7 +24,6 @@ evince
 evolution
 fastfetch
 file-roller
-firefox
 five-or-more
 four-in-a-row
 fzf
@@ -98,6 +97,7 @@ gvfs-gphoto2
 gvfs-mtp
 gvfs-nfs
 gvfs-smb
+handbrake
 hitori
 htop
 hugo
@@ -109,6 +109,7 @@ keepassxc
 krita
 lf
 libc++
+libdvdcss
 libreoffice-still
 lightsoff
 linux
@@ -127,15 +128,18 @@ nmap
 noto-fonts
 noto-fonts-cjk
 noto-fonts-extra
+nvm
 obs-studio
 obsidian
 ollama
 orca
 pandoc-cli
 perl-image-exiftool
+pipewire-session-manager
 polari
 python-pip
 python-virtualenv
+qbittorrent
 qt5-3d
 qt5-charts
 qt5-connectivity
@@ -191,7 +195,7 @@ tk
 tldr
 tmux
 totem
-vim
+vlc
 vulkan-radeon
 xclip
 xdg-desktop-portal-gnome
