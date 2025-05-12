@@ -14,6 +14,7 @@ export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME}/jupyter"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
-export GOPATH=$HOME/go
+export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
+export GOPATH=${HOME}/go
 
-export PATH="${HOME}/.local/bin:$GOPATH/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
