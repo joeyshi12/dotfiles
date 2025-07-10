@@ -18,3 +18,4 @@ export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
 export GOPATH=${HOME}/go
 
 export PATH="${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
+. "$HOME/.cargo/env"

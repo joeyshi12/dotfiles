@@ -5,7 +5,7 @@ DOTFILES_DIR="${HOME}/.dotfiles"
 [ ! -d "${HOME}/.local/bin" ] && mkdir -p "${HOME}/.local/bin"
 
 # Create links
-for file in .config/* .local/bin/* .profile .zshrc .xinitrc; do
+for file in .config/* .local/bin/* .zprofile .zshrc .xinitrc; do
     rm -f "${HOME}/$file"
     ln -sfn "${DOTFILES_DIR}/${file}" "${HOME}/${file}"
 done
