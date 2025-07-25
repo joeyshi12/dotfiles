@@ -63,6 +63,7 @@ alias dn='docker network'
 alias da='docker attach'
 alias dlg='docker logs'
 alias dv='docker volume'
+alias dpu='docker pull'
 
 dsh() {
     docker exec -it $1 "/bin/sh"
