@@ -11,6 +11,7 @@ alias ff="fastfetch"
 alias pacs="sudo pacman --color=auto -S"
 alias pacss="pacman --color=auto -Ss"
 alias pacqs="pacman --color=auto -Qs"
+alias pacqo="pacman --color=auto -Qo"
 alias pacqe="pacman --color=auto -Qe"
 alias pacsyu="sudo pacman --color=auto -Syu"
 alias pacrsn="sudo pacman --color=auto -Rsn"
@@ -55,6 +56,7 @@ alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias db='docker build'
 alias dr='docker run'
+alias dst='docker container start'
 alias dstp='docker container stop'
 alias dstpa='docker container stop $(docker ps -aq)'
 alias drm='docker container rm'
