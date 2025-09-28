@@ -12,6 +12,7 @@ ddclient
 dnsmasq
 docker
 docker-compose
+dunst
 efibootmgr
 fastfetch
 feh
@@ -46,6 +47,7 @@ networkmanager
 nix
 noto-fonts
 noto-fonts-cjk
+noto-fonts-emoji
 noto-fonts-extra
 obsidian
 ollama
@@ -66,7 +68,7 @@ thunar
 tldr
 tmux
 ttf-jetbrains-mono
-ttf-liberation-mono-nerd
+ttf-liberation
 ttf-sourcecodepro-nerd
 unrar
 unzip

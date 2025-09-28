@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles for my Arch Linux system running Gnome desktop.
+Dotfiles for my Arch Linux system running dwm.
 
 ## Getting started
 
