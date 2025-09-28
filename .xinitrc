@@ -1,3 +1,3 @@
-export XDG_SESSION_TYPE=x11
-export GDK_BACKEND=x11
-exec gnome-session
+feh --no-fehbg \
+    --bg-scale ~/.dotfiles/assets/wallpapers/tropic_island_night.jpg
+exec dwm
