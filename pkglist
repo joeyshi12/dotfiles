@@ -1,7 +1,9 @@
+7zip
 amd-ucode
 base
 base-devel
 bat
+bc
 bind
 blender
 bluez
@@ -41,6 +43,7 @@ lshw
 man-db
 musescore
 nano
+nautilus
 neovim
 net-tools
 networkmanager
@@ -64,7 +67,6 @@ rust
 rust-analyzer
 smartmontools
 syncthing
-thunar
 tldr
 tmux
 ttf-jetbrains-mono
@@ -84,6 +86,7 @@ wget
 whois
 wine
 wireless_tools
+wiremix
 wireshark-qt
 wpa_supplicant
 xclip
@@ -94,6 +97,7 @@ xf86-video-ati
 xf86-video-nouveau
 xorg-server
 xorg-xinit
+zathura
 zram-generator
 zsh
 zsh-autosuggestions
