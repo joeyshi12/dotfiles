@@ -18,3 +18,7 @@ export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
 export GOPATH=${HOME}/go
 
 export PATH="${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
+
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  exec startx
+fi
