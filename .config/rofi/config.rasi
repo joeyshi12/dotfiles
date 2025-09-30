@@ -20,6 +20,8 @@ window {
     children: [mainbox];
     orientation: horizontal;
     color: @foreground;
+    border: 2px;
+    border-color: @accent;
 }
 
 mainbox {
@@ -28,8 +30,6 @@ mainbox {
 }
 
 message {
-    border: 0px 2px 2px 2px;
-    border-color: @accent;
     background-color: rgba(59, 90, 131, 0.85); /* Sky Blue semi-transparent */
     font: "JetBrainsMono Nerd Font 10";
     color: @foreground;
@@ -38,8 +38,9 @@ message {
 inputbar {
     color: @foreground;
     padding: 10px;
-    border: 2px;
+    border: 0 0 2px 0;
     border-color: @accent;
+    background-color: inherit;
     children: [entry, prompt];
 }
 
@@ -52,7 +53,6 @@ case-indicator {
 
 listview {
     padding: 8px;
-    border: 0px 2px 2px 2px;
     border-color: @accent;
     background-color: rgba(11, 42, 71, 0.9); /* Deep Ocean Blue translucent */
     lines: 10;

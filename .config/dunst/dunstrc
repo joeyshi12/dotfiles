@@ -2,19 +2,20 @@
 # Display
 monitor = 0
 follow = mouse
-geometry = "470x25-15+105"
+origin = bottom-center
+offset = (0, 100)
 indicate_hidden = yes
 padding = 16
 horizontal_padding = 20
 frame_width = 2
-frame_color = "#89b4fa"
+frame_color = "#3B5A83"
+foreground = "#D8E1E8"
+background = "#0B2A47"
 separator_height = 2
 separator_color = frame
 transparency = 0
 sort = yes
 idle_threshold = 120
-progress_bar_height = 8
-progress_bar_frame_width = 1
 
 # Text
 font = SauceCodePro Nerd Font 12
@@ -45,17 +46,11 @@ history = mod4+grave
 context = mod4+shift+grave
 
 [urgency_low]
-background = "#1e1e2e"
-foreground = "#89b4fa"  # Blue text
 timeout = 3
 
 [urgency_normal]
-background = "#1e1e2e"
-foreground = "#89b4fa"
 timeout = 10
 
 [urgency_critical]
-background = "#1e1e2e"
-foreground = "#89b4fa"
-frame_color = "#89b4fa"
+frame_color = "#F5D27B"
 timeout = 0
