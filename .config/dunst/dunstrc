@@ -39,12 +39,6 @@ title = Dunst
 class = Dunst
 startup_notification = false
 
-[shortcuts]
-close = mod4+BackSpace
-close_all = mod4+shift+BackSpace
-history = mod4+grave
-context = mod4+shift+grave
-
 [urgency_low]
 timeout = 3
 
