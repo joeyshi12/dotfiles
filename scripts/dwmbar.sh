@@ -19,7 +19,7 @@ wlan() {
 }
 
 clock() {
-    printf "  󱑆  $(date "+%a %b %d %H:%M")  "
+    printf "  󱑆  $(date "+%a %b %d %I:%M %p")  "
 }
 
 while true; do
