@@ -2,7 +2,7 @@
 
 Dotfiles for my Arch Linux system running dwm.
 
-![Desktop preview](/assets/preview.png)
+![Desktop preview](/assets/preview.webp)
 
 ## Getting started
 
