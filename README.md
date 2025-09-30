@@ -2,6 +2,8 @@
 
 Dotfiles for my Arch Linux system running dwm.
 
+![Desktop preview](/assets/preview.png)
+
 ## Getting started
 
 ### Install dotfiles
