@@ -10,7 +10,7 @@ mem() {
 }
 
 wlan() {
-    network=$(nmcli -t -f NAME,TYPE connection show --active | grep -v 'lo' | cut -d: -f1)
+    network=$(nmcli -t -f NAME,TYPE connection show --active | head -n1 | cut -d ':' -f1)
     if [ -z "$network" ]; then
         printf "  󰤭  Disconnected  "
     else
