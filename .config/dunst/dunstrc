@@ -2,8 +2,8 @@
 # Display
 monitor = 0
 follow = mouse
-origin = bottom-center
-offset = (0, 100)
+origin = top-right
+offset = (15, 40)
 indicate_hidden = yes
 padding = 16
 horizontal_padding = 20

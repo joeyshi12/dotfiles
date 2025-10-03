@@ -1,0 +1,2 @@
+# Set default options
+feh -d --draw-exif --image-bg #0b2a47

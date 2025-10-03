@@ -1,0 +1,28 @@
+# vim-like menu bindings on a qwerty keyboard:
+menu_parent h Left
+menu_child  l Right
+menu_down   j Down
+menu_up     k Up
+menu_select space Return
+
+# Image navigation
+next_img C-n
+prev_img C-p
+
+# Image scrolling
+scroll_up    k C-Up
+scroll_down  j C-Down
+scroll_left  h C-Left
+scroll_right l C-Right
+
+# Zooming
+zoom_in      plus  Up
+zoom_out     minus Down
+zoom_default equal
+
+remove
+delete
+save_image
+save_filelist
+toggle_filenames
+toggle_pause

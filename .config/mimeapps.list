@@ -12,6 +12,9 @@ inode/directory=org.gnome.Nautilus.desktop
 application/x-zerosize=kitty.desktop
 application/x-7z-compressed=userapp-7z x-ZWL8C3.desktop
 application/zip=userapp-unzip-AQNID3.desktop
+image/jpeg=feh.desktop
+image/png=feh.desktop
+image/gif=feh.desktop
 
 [Added Associations]
 image/jpeg=feh.desktop;
@@ -20,3 +23,6 @@ inode/directory=thunar.desktop;
 application/x-zerosize=kitty.desktop;
 application/x-7z-compressed=userapp-7z x-ZWL8C3.desktop;
 image/svg+xml=org.inkscape.Inkscape.desktop;
+image/jpeg=feh.desktop
+image/png=feh.desktop
+image/gif=feh.desktop
