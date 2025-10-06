@@ -3,8 +3,8 @@ set -eu
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 REPO_DIR="${HOME}/.local/src"
-BASE_GIT_URL="https://github.com/joeyshi12/dotfiles.git"
-#BASE_GIT_URL="git@github.com:joeyshi12/dotfiles.git"
+BASE_GIT_URL="https://github.com/joeyshi12"
+#BASE_GIT_URL="git@github.com:joeyshi12"
 
 require_cmd() {
     if ! command -v "$1" >/dev/null 2>&1; then
@@ -34,7 +34,7 @@ clone_and_build() {
     if is_git_repo "${target}"; then
         echo "Skipped: ${target} already exists"
     else
-        git clone "${BASE_GIT_URL}/${package}" "${target}"
+        git clone "${BASE_GIT_URL}/${package}.git" "${target}"
         if ! make -C "${target}" >/dev/null; then
             echo "Error: failed to build ${target}" >&2
             exit 1
