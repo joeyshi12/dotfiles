@@ -30,11 +30,12 @@ hugo
 inetutils
 inkscape
 intel-media-driver
-iwd
+jq
 keepassxc
 kitty
 krita
 lf
+libreoffice-still
 libva-intel-driver
 linux-firmware
 linux-lts
@@ -56,6 +57,7 @@ obsidian
 ollama
 openssh
 perl-image-exiftool
+picom
 pipewire-pulse
 python-pip
 python-virtualenv
@@ -67,6 +69,7 @@ rust
 rust-analyzer
 scrot
 smartmontools
+steam
 syncthing
 tldr
 tmux
