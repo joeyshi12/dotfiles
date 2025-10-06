@@ -30,15 +30,16 @@ done
 
 clone_and_build() {
     local package="$1"
-    if is_git_repo "${REPO_DIR}/${package}"; then
-        echo "Skipped: ${REPO_DIR}/${package} already exists"
+    local target="${REPO_DIR}/${package}"
+    if is_git_repo "${target}"; then
+        echo "Skipped: ${target} already exists"
     else
-        git clone "${BASE_GIT_URL}/${package}" "${REPO_DIR}/${package}"
+        git clone "${BASE_GIT_URL}/${package}" "${target}"
         if ! make -C "${target}" >/dev/null; then
-            echo "Error: failed to build ${package}" >&2
+            echo "Error: failed to build ${target}" >&2
             exit 1
         fi
-        echo "Finished building ${package}"
+        echo "Finished building ${target}"
     fi
 }
 
