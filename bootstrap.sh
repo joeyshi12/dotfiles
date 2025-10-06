@@ -3,7 +3,8 @@ set -eu
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 REPO_DIR="${HOME}/.local/src"
-BASE_GIT_URL="git@github.com:joeyshi12"
+BASE_GIT_URL="https://github.com/joeyshi12/dotfiles.git"
+#BASE_GIT_URL="git@github.com:joeyshi12/dotfiles.git"
 
 require_cmd() {
     if ! command -v "$1" >/dev/null 2>&1; then
