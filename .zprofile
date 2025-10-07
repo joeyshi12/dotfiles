@@ -13,7 +13,7 @@ export MARIADB_HISTFILE="${XDG_STATE_HOME}/mariadb_history"
 export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME}/jupyter"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
-export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
+export JAVA_HOME="/usr/lib/jvm/default"
 export GOPATH=${HOME}/go
 
 export PATH="${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
