@@ -22,6 +22,7 @@ flameshot
 font-manager
 fuse2
 fzf
+gedit
 git
 godot
 grub
@@ -43,10 +44,10 @@ linux-firmware
 linux-lts
 linux-lts-headers
 lshw
+lxappearance
 man-db
 musescore
 nano
-nautilus
 neovim
 net-tools
 networkmanager
@@ -73,15 +74,16 @@ scrot
 smartmontools
 steam
 syncthing
+thunar
 tldr
 tmux
 ttf-jetbrains-mono
 ttf-liberation
 ttf-sourcecodepro-nerd
+tumbler
 unrar
 unzip
 usbutils
-vim
 vlc
 vlc-plugins-all
 vulkan-intel

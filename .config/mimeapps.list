@@ -43,3 +43,4 @@ application/x-extension-shtml=brave-browser.desktop;
 application/xhtml+xml=brave-browser.desktop;
 application/x-extension-xhtml=brave-browser.desktop;
 application/x-extension-xht=brave-browser.desktop;
+text/plain=org.gnome.gedit.desktop;
