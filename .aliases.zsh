@@ -6,6 +6,8 @@ alias copy="xclip -sel c"
 alias diff="diff --color"
 alias open="xdg-open"
 alias ff="fastfetch"
+# https://sw.kovidgoyal.net/kitty/faq
+alias ssh="kitten ssh"
 
 # Pacman
 alias pacs="sudo pacman --color=auto -S"
