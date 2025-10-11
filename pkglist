@@ -52,10 +52,8 @@ neovim
 net-tools
 networkmanager
 nix
-noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
-noto-fonts-extra
 obsidian
 ollama
 openssh
@@ -79,6 +77,7 @@ tldr
 tmux
 ttf-jetbrains-mono
 ttf-liberation
+ttf-noto-nerd
 ttf-sourcecodepro-nerd
 tumbler
 unrar

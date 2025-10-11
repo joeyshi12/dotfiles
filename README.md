@@ -6,10 +6,13 @@ Dotfiles for my Arch Linux system running dwm.
 
 ## Getting started
 
-1. Clone dotfiles into `~/.dotfiles`.
-2. Install dependencies from `pkglist` with `pacman` and `pkglocallist` with `yay`.
+1. Verify that your system has `git` and `make` installed.
+2. Install dotfiles with
+    ```sh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/joeyshi12/dotfiles/refs/heads/main/scripts/install.sh)"
+    ```
+3. Install package dependencies with
     ```sh
     pacman -S - < pkglist
     yay -S --needed < pkglocallist
     ```
-3. Run `./bootstrap.sh` to create dotfile links and install `dwm`.
