@@ -3,7 +3,6 @@ set -eu
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 REPO_DIR="${HOME}/.local/src"
-TMUX_PLUGINS_DIR="${DOTFILES_DIR}/.config/tmux/plugins"
 
 require_cmd() {
     if ! command -v "$1" >/dev/null 2>&1; then
@@ -43,14 +42,14 @@ require_cmd git
 require_cmd make
 
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
-clone_repo "https://github.com/tmux-plugins/tpm.git" "${TMUX_PLUGINS_DIR}/tpm"
+clone_repo "https://github.com/tmux-plugins/tpm.git" "${DOTFILES_DIR}/.config/tmux/plugins/tpm"
 clone_repo "https://github.com/joeyshi12/dwm.git" "${REPO_DIR}/dwm"
 clone_repo "https://github.com/joeyshi12/dwmstatus.git" "${REPO_DIR}/dwmstatus"
 
 build_source "${REPO_DIR}/dwm"
 build_source "${REPO_DIR}/dwmstatus"
 
-mkdir -p "${HOME}/.config" "${REPO_DIR}" "${TMUX_PLUGINS_DIR}"
+mkdir -p "${HOME}/.config"
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"
