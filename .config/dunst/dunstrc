@@ -18,7 +18,7 @@ sort = yes
 idle_threshold = 120
 
 # Text
-font = SauceCodePro Nerd Font 12
+font = monospace 12
 markup = full
 format = "<b>%s</b>\n%b"
 alignment = left

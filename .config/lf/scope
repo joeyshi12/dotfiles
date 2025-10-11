@@ -10,7 +10,7 @@ case "$(file --dereference --brief --mime-type -- "$1")" in
     application/x-7z-compressed)
         7z l "$1" ;;
     text/* | application/json | application/javascript | image/svg+xml)
-        bat --terminal-width $(($3-2)) -f "$1" ;;
+        bat --terminal-width "$4" -f "$1" ;;
     *)
         exiftool $1 ;;
 esac
