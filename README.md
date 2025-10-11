@@ -13,6 +13,6 @@ Dotfiles for my Arch Linux system running dwm.
     ```
 3. Install package dependencies with
     ```sh
-    pacman -S - < pkglist
-    yay -S --needed < pkglocallist
+    pacman -S - < ~/.dotfiles/pkglist
+    yay -S --needed < ~/.dotfiles/pkglocallist
     ```
