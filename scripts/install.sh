@@ -42,8 +42,6 @@ build_source() {
 require_cmd git
 require_cmd make
 
-mkdir -p "${HOME}/.config" "${REPO_DIR}" "${TMUX_PLUGINS_DIR}"
-
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
 clone_repo "https://github.com/tmux-plugins/tpm.git" "${TMUX_PLUGINS_DIR}/tpm"
 clone_repo "https://github.com/joeyshi12/dwm.git" "${REPO_DIR}/dwm"
@@ -51,6 +49,8 @@ clone_repo "https://github.com/joeyshi12/dwmstatus.git" "${REPO_DIR}/dwmstatus"
 
 build_source "${REPO_DIR}/dwm"
 build_source "${REPO_DIR}/dwmstatus"
+
+mkdir -p "${HOME}/.config" "${REPO_DIR}" "${TMUX_PLUGINS_DIR}"
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"
