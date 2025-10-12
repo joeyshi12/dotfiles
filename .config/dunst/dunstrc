@@ -8,9 +8,6 @@ indicate_hidden = yes
 padding = 16
 horizontal_padding = 20
 frame_width = 2
-frame_color = "#3B5A83"
-foreground = "#D8E1E8"
-background = "#0B2A47"
 separator_height = 2
 separator_color = frame
 transparency = 0
@@ -40,11 +37,19 @@ class = Dunst
 startup_notification = false
 
 [urgency_low]
-timeout = 3
+    background = "#0f1825"
+    foreground = "#6b8494"
+    frame_color = "#253447"
+    timeout = 5
 
 [urgency_normal]
-timeout = 10
+    background = "#0f1825"
+    foreground = "#e8f4f8"
+    frame_color = "#4a9eb8"
+    timeout = 10
 
 [urgency_critical]
-frame_color = "#F5D27B"
-timeout = 0
+    background = "#0f1825"
+    foreground = "#e8f4f8"
+    frame_color = "#f4d06f"
+    timeout = 0

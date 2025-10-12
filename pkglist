@@ -1,4 +1,5 @@
 7zip
+alacritty
 amd-ucode
 base
 base-devel
@@ -33,7 +34,6 @@ inkscape
 intel-media-driver
 jq
 keepassxc
-kitty
 krita
 kwallet-pam
 kwalletmanager
@@ -76,9 +76,9 @@ thunar
 tldr
 tmux
 ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
 ttf-liberation
 ttf-noto-nerd
-ttf-sourcecodepro-nerd
 tumbler
 unrar
 unzip

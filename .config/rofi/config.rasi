@@ -1,68 +1,114 @@
-* {
+configuration {
+    show-icons: true;
+    display-drun: "Launch";
+    display-run: "Run";
+    display-window: "Windows";
     font: "JetBrains Mono 12";
-    background-color: transparent;
-    text-color: @foreground;
+    modi: "drun,run,window,ssh";
+    matching: "fuzzy";
+}
 
-    foreground:     #D8E1E8; /* Soft Cloud */
-    background:     #0B2A47; /* Deep Ocean Blue */
-    background-alt: #1F3D5C; /* Night Teal */
-    accent:         #3B5A83; /* Sky Blue */
-    green:          #3A5F3D; /* Palm Green */
-    sand:           #C5A36A; /* Warm Sand */
-    yellow:         #F5D27B; /* Starlight Yellow */
+* {
+    bg:              #0f1825;
+    bgalt:           #253447;
+    accent:          #4a9eb8;
+    fg:              #e8f4f8;
+    fgdim:           #6b8494;
+    urgent:          #f4d06f;
+    
+    background-color: transparent;
+    text-color:       @fg;
+    margin:           0;
+    padding:          0;
+    spacing:          0;
 }
 
 window {
-    location: center;
-    anchor: center;
-    width: 600px;
-    spacing: 0;
-    children: [mainbox];
-    orientation: horizontal;
-    border: 2px;
-    background-color: @background;
-    border-color: @accent;
-}
-
-mainbox {
-    spacing: 0;
-    children: [inputbar, message, listview];
-}
-
-message {
-    font: "JetBrains Mono 10";
+    background-color: @bg;
+    location:         center;
+    width:            600;
+    border:           2px;
+    border-color:     @accent;
+    border-radius:    0;
 }
 
 inputbar {
-    padding: 8px;
-    border: 0 0 2px 0;
-    border-color: @accent;
-    background-color: #000;
-    children: [entry, prompt];
+    padding:          12px;
+    spacing:          8px;
+    children:         [entry, prompt];
+    background-color: @bgalt;
 }
 
-entry,
-prompt,
-case-indicator {
-    text-font: inherit;
-    text-color: inherit;
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    placeholder:       "Search...";
+    placeholder-color: @fgdim;
+}
+
+message {
+    margin:           0;
+    padding:          12px;
+    border-color:     @bgalt;
+    background-color: @bgalt;
+}
+
+textbox {
+    padding:     8px;
+    text-color:  @fg;
 }
 
 listview {
-    padding: 8px;
-    border-color: @accent;
-    lines: 10;
-    scrollbar: true;
+    lines:        10;
+    fixed-height: true;
+    border:       1px 0 0;
+    border-color: @bgalt;
+    padding:      4px;
+    scrollbar:    true;
 }
 
 element {
-    padding: 4px;
-    font: inherit;
-    children: [element-text, element-icon];
+    padding:          4px 8px;
+    background-color: transparent;
+    children:         [element-text, element-icon];
 }
 
-element selected.normal {
-    background-color: @accent;
+element normal normal {
+    text-color: @fg;
+}
+
+element normal urgent {
+    text-color: @urgent;
+}
+
+element normal active {
+    text-color: @accent;
+}
+
+element selected normal {
+    background-color: @bgalt;
+    text-color:       @fg;
+}
+
+element selected urgent {
+    background-color: @urgent;
+    text-color:       @bg;
+}
+
+element selected active {
+    background-color: @bgalt;
+    text-color:       @accent;
+}
+
+element-icon {
+    size: 1.1em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
 }
 
 scrollbar {
@@ -71,8 +117,4 @@ scrollbar {
     handle-color: @accent;
     handle-width: 4px;
     padding: 0;
-}
-
-error-message {
-    padding: 8px;
 }
