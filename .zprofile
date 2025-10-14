@@ -17,6 +17,7 @@ export JAVA_HOME="/usr/lib/jvm/default"
 export GOPATH=${HOME}/go
 
 export PATH="${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
+export PATH="$HOME/.elan/bin:$PATH"
 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
