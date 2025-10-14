@@ -45,3 +45,4 @@ application/xhtml+xml=brave-browser.desktop;
 application/x-extension-xhtml=brave-browser.desktop;
 application/x-extension-xht=brave-browser.desktop;
 text/plain=org.gnome.gedit.desktop;
+application/pdf=libreoffice-draw.desktop;krita_pdf.desktop;

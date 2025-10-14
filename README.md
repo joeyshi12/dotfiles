@@ -16,6 +16,8 @@ Dotfiles for my Arch Linux system running dwm.
     pacman -S - < ~/.dotfiles/pkglist
     yay -S --needed < ~/.dotfiles/pkglocallist
     ```
-4. Download themes and icons to `~/.local/share/themes` and `~/.local/share/icons` respectively
+4. Unpack any custom themes and icons to `~/.local/share/themes` and `~/.local/share/icons` respectively
     - Theme: https://www.gnome-look.org/p/1318133
-    - Icons: https://www.gnome-look.org/p/1333828
+    - Icons: [breeze-icons](https://archlinux.org/packages/extra/x86_64/breeze-icons/)
+        - Should already be installed from `pkglist`.
+5. Apply themes and icons from the [`lxappearance-gtk3`](https://archlinux.org/packages/extra/x86_64/lxappearance-gtk3/) desktop application.
