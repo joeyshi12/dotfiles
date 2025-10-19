@@ -13,7 +13,7 @@ Dotfiles for my Arch Linux system running dwm.
     ```
 3. Install packages with
     ```sh
-    pacman -S - < ~/.dotfiles/pkglist
+    pacman -S --needed - < ~/.dotfiles/pkglist
     yay -S --needed < ~/.dotfiles/pkglocallist
     ```
 4. Unpack any custom themes and icons to `~/.local/share/themes` and `~/.local/share/icons` respectively
