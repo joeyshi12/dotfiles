@@ -10,7 +10,7 @@ send_notification() {
     width=$(bc <<< "$volume * 20 + 0.5" | cut -d "." -f1)
     progress=$(seq -s "=" 0 $width | sed 's/[0-9]//g')
     bar=$(printf '[%-20s]' $progress)
-    dunstify -I ~/.dotfiles/assets/icons/audio-speakers.svg -t 1600 -r 2593 -u normal "$bar"
+    dunstify -I ~/.dotfiles/assets/icons/audio-speakers.svg -t 1600 -r 2593 -u low "$bar"
 }
 
 case $1 in

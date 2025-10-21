@@ -29,6 +29,7 @@ godot
 grub
 htop
 hugo
+imagemagick
 inetutils
 inkscape
 intel-media-driver
@@ -44,7 +45,7 @@ linux-firmware
 linux-lts
 linux-lts-headers
 lshw
-lxappearance
+lxappearance-gtk3
 man-db
 musescore
 nano
@@ -68,11 +69,11 @@ rofi
 rsync
 rust
 rust-analyzer
-scrot
 smartmontools
 steam
 syncthing
 thunar
+thunar-archive-plugin
 tldr
 tmux
 ttf-jetbrains-mono
@@ -96,6 +97,7 @@ wireless_tools
 wiremix
 wireshark-qt
 wpa_supplicant
+xarchiver
 xclip
 xdg-utils
 xdotool
