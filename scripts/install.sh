@@ -53,7 +53,7 @@ mkdir -p "${HOME}/.config"
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"
-for file in .config/* .xinitrc .zprofile .zshrc; do
+for file in .config/* .xinitrc .zshenv; do
     ln -sfn "${DOTFILES_DIR}/${file}" "${HOME}/${file}"
     echo "Linked ${HOME}/${file}"
 done
