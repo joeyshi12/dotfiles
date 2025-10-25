@@ -1,0 +1,13 @@
+aseprite-debug
+brave-bin
+discord-ptb
+gnu-netcat
+lib32-amdvlk
+postman-bin
+vencord
+vesktop
+vesktop-debug
+yay
+yay-debug
+zsh-theme-powerlevel10k-git
+zsh-theme-powerlevel10k-git-debug

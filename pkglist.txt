@@ -9,9 +9,11 @@ bind
 blender
 bluez
 bluez-utils
+brave-bin
 cmake
 dbeaver
 ddclient
+discord-ptb
 dnsmasq
 docker
 docker-compose
@@ -25,6 +27,7 @@ fuse2
 fzf
 gedit
 git
+gnu-netcat
 godot
 grub
 htop
@@ -45,7 +48,7 @@ linux-firmware
 linux-lts
 linux-lts-headers
 lshw
-lxappearance-gtk3
+lxappearance
 man-db
 musescore
 nano
@@ -55,12 +58,14 @@ networkmanager
 nix
 noto-fonts-cjk
 noto-fonts-emoji
+obs-studio
 obsidian
 ollama
 openssh
 perl-image-exiftool
 picom
 pipewire-pulse
+postman-bin
 python-pip
 python-virtualenv
 qbittorrent
@@ -84,6 +89,7 @@ tumbler
 unrar
 unzip
 usbutils
+vencord
 vlc
 vlc-plugins-all
 vulkan-intel
@@ -107,8 +113,10 @@ xf86-video-nouveau
 xorg-server
 xorg-xinit
 xorg-xsetroot
+yay
 zathura
 zathura-pdf-mupdf
 zram-generator
 zsh
 zsh-autosuggestions
+zsh-theme-powerlevel10k-git
