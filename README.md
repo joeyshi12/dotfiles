@@ -6,7 +6,7 @@ Dotfiles for my Arch Linux system running dwm.
 
 ## Getting started
 
-1. Verify that your system has `git` and `make` installed.
+1. Verify that your system has `git`, `make`, and [`yay`](https://github.com/Jguer/yay?tab=readme-ov-file#installation) installed.
 2. Install dotfiles with
     ```sh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/joeyshi12/dotfiles/refs/heads/main/scripts/install.sh)"
