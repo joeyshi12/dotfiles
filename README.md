@@ -13,8 +13,8 @@ Dotfiles for my Arch Linux system running dwm.
     ```
 3. Install packages with
     ```sh
-    pacman -S --needed - < ~/.dotfiles/pkglist
-    yay -S --needed < ~/.dotfiles/pkglocallist
+    sudo pacman -S --needed - < ~/.dotfiles/pkglist.txt
+    yay -S --needed < ~/.dotfiles/aur_pkglist.txt
     ```
 4. Unpack any custom themes and icons to `~/.local/share/themes` and `~/.local/share/icons` respectively
     - Theme: https://www.gnome-look.org/p/1318133
