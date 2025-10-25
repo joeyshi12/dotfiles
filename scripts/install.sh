@@ -58,4 +58,4 @@ for file in .config/* .xinitrc .zshenv; do
     echo "Linked ${HOME}/${file}"
 done
 popd
-echo "Finished bootstrapping dotfiles"
+echo "Finished installing dotfiles"
