@@ -46,5 +46,5 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 
 # User configuration files
-[[ -f "${ZDOTDIR}/.aliases.zsh" ]] && source "${ZDOTDIR}/.aliases.zsh"
-[[ -f "${ZDOTDIR}/.p10k.zsh" ]] && source "${ZDOTDIR}/.p10k.zsh"
+[[ -f "${ZDOTDIR}/aliases.zsh" ]] && source "${ZDOTDIR}/aliases.zsh"
+[[ -f "${ZDOTDIR}/p10k.zsh" ]] && source "${ZDOTDIR}/p10k.zsh"
