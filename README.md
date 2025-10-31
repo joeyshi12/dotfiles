@@ -11,7 +11,7 @@ Dotfiles for my Arch Linux system running dwm.
     ```sh
     git clone https://github.com/joeyshi12/dotfiles.git .dotfiles
     ```
-3. Install dependencies from package lists.
+3. Install dependencies from the package lists.
     ```sh
     sudo pacman -S --needed - < ~/.dotfiles/pkglist.txt
     yay -S --needed < ~/.dotfiles/aur_pkglist.txt
