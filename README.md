@@ -16,7 +16,7 @@ Dotfiles for my Arch Linux system running dwm.
     sudo pacman -S --needed - < ~/.dotfiles/pkglist.txt
     yay -S --needed < ~/.dotfiles/aur_pkglist.txt
     ```
-4. Install dotfiles.
+4. Install the dotfiles.
     ```sh
     ~/.dotfiles/scripts/install.sh
     ```
