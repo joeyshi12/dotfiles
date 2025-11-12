@@ -14,4 +14,8 @@ export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export NODE_REPL_HISTORY="${XDG_STATE_HOME}/node_repl_history"
 export MARIADB_HISTFILE="${XDG_STATE_HOME}/mariadb_history"
 export GOPATH=${HOME}/go
+
+# Redbot supports only Java 11 and 17
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+
 export PATH="${HOME}/.elan/bin:${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
