@@ -9,7 +9,7 @@ Dotfiles for my Arch Linux system running dwm.
 1. Verify that your system has `git`, `make`, and [`yay`](https://github.com/Jguer/yay?tab=readme-ov-file#installation) installed.
 2. Clone the repository.
     ```sh
-    git clone https://github.com/joeyshi12/dotfiles.git .dotfiles
+    git clone https://github.com/joeyshi12/dotfiles.git ~/.dotfiles
     ```
 3. Install dependencies from the package lists.
     ```sh
