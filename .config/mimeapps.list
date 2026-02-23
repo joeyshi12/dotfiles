@@ -24,6 +24,8 @@ application/x-extension-xhtml=brave-browser.desktop
 application/x-extension-xht=brave-browser.desktop
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/discord-1361252452329848892=discord-1361252452329848892.desktop
+image/vnd.djvu+multipage=org.pwmt.zathura.desktop
+application/x-nuscript=org.gnome.gedit.desktop
 
 [Added Associations]
 image/jpeg=feh.desktop;
@@ -48,3 +50,6 @@ application/x-extension-xht=brave-browser.desktop;
 text/plain=org.gnome.gedit.desktop;
 application/pdf=libreoffice-draw.desktop;krita_pdf.desktop;
 text/csv=org.gnome.gedit.desktop;
+image/vnd.djvu+multipage=org.pwmt.zathura-pdf-mupdf.desktop;org.pwmt.zathura.desktop;
+video/mp4=vlc.desktop;
+application/x-nuscript=org.gnome.gedit.desktop;
