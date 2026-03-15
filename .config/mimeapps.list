@@ -53,3 +53,5 @@ text/csv=org.gnome.gedit.desktop;
 image/vnd.djvu+multipage=org.pwmt.zathura-pdf-mupdf.desktop;org.pwmt.zathura.desktop;
 video/mp4=vlc.desktop;
 application/x-nuscript=org.gnome.gedit.desktop;
+video/x-matroska=vlc.desktop;
+application/sql=org.gnome.gedit.desktop;
