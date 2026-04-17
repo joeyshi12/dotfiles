@@ -53,7 +53,7 @@ build_source "${REPO_DIR}/dwmstatus"
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"
-for file in .config/* .xinitrc .zshenv; do
+for file in .config/* .xinitrc .Xresources .zshenv; do
     ln -sfn "${DOTFILES_DIR}/${file}" "${HOME}/${file}"
     echo "Linked ${HOME}/${file}"
 done

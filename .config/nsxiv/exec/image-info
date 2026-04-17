@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $XDG_CONFIG_HOME/nsxiv/exec/image-info
+# Called by nsxiv(1) whenever an image gets loaded.
+# Output is displayed in the status bar.
+# Arguments:
+#   $1: path to image file
+#   $2: image width
+#   $3: image height
+#   $4: fully resolved path
+
+s="  "
+
+exec 2>/dev/null
+
+filename=$(basename -- "$1")
+filesize=$(du -Hh -- "$1" | cut -f 1)
+geometry="${2}x${3}"
+
+# EXIF: camera model, focal length, exposure, aperture, ISO
+exif=$(exiv2 -q -g Exif.Image.Model \
+              -g Exif.Photo.FocalLength \
+              -g Exif.Photo.ExposureTime \
+              -g Exif.Photo.FNumber \
+              -g Exif.Photo.ISOSpeedRatings \
+              pr "$4" 2>/dev/null \
+      | awk '{ $1=$2=$3=""; sub(/^[ \t]+/, ""); printf "%s  ", $0 }')
+
+if [ -n "$exif" ]; then
+	echo "${filename}${s}${geometry}${s}${filesize}${s}${exif}"
+else
+	echo "${filename}${s}${geometry}${s}${filesize}"
+fi

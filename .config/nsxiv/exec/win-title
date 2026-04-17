@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# $XDG_CONFIG_HOME/nsxiv/exec/win-title
+# Called by nsxiv(1) whenever relevant information changes.
+# Output is set as the window title.
+# Arguments:
+#   $1: resolved absolute path of current file
+#   $2: current file number
+#   $3: total file count
+#   $4: image width (empty in thumbnail mode)
+#   $5: image height (empty in thumbnail mode)
+#   $6: current zoom (empty in thumbnail mode)
+
+exec 2>/dev/null
+
+filename="${1##*/}"
+
+if [ -n "$4" ]; then
+	printf "%s" "nsxiv - ${filename} | ${4}x${5} ${6}% [${2}/${3}]"
+else
+	printf "%s" "nsxiv [${2}/${3}] ${filename}"
+fi

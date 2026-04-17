@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# $XDG_CONFIG_HOME/nsxiv/exec/key-handler
+# Called by nsxiv(1) after pressing Ctrl-x, followed by a key combo.
+# Marked images (or current image) are passed via stdin, one per line.
+
+[ "$NSXIV_USING_NULL" = 1 ] && DELIM='\0' || DELIM='\n'
+
+rotate() {
+	tr "$DELIM" '\0' | xargs -0 realpath -z | sort -z -u | xargs -0 -I {} sh -c '
+		degree="$1"
+		case "$(file -b -i "{}")" in
+		image/jpeg*) jpegtran -rotate "$degree" -copy all -outfile "{}" "{}" ;;
+		*)           mogrify  -rotate "$degree" "{}" ;;
+		esac
+	' -- "$1"
+}
+
+case "$1" in
+"C-c")      while read file; do xclip -selection clipboard -target image/png "$file"; done ;;
+"C-e")      while read file; do exiv2 -q -pa pr "$file" | less & done ;;
+"C-w")      while read file; do feh --no-fehbg --bg-scale "$file"; done ;;
+"C-comma")  rotate 270 ;;
+"C-period") rotate  90 ;;
+"C-slash")  rotate 180 ;;
+"d")        while read file; do rm -- "$file"; done ;;
+esac

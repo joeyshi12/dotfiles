@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# $XDG_CONFIG_HOME/nsxiv/exec/thumb-info
+# Called by nsxiv(1) whenever the selected thumbnail changes.
+# Output is displayed in the status bar.
+# Arguments:
+#   $1: path to image file
+#   $4: fully resolved path
+
+s="  "
+
+exec 2>/dev/null
+
+filename=$(basename -- "$4")
+filesize=$(du -Hh -- "$4" | cut -f 1)
+
+echo "${filename}${s}${filesize}"

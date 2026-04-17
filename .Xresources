@@ -1,0 +1,6 @@
+Nsxiv.window.background: #0f1825
+Nsxiv.window.foreground: #c0caf5
+Nsxiv.bar.background: #0f1825
+Nsxiv.bar.foreground: #c0caf5
+Nsxiv.mark.foreground: #7aa2f7
+Nsxiv.bar.font: monospace-10
