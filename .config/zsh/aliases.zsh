@@ -77,10 +77,11 @@ alias tma="tmux attach-session"
 alias tml="tmux list-sessions"
 alias tmk="tmux kill-session"
 
-# lf with ueberzug image preview
-lf() {
-    [ ! -d "${XDG_CACHE_HOME}/lf" ] && mkdir -p "${XDG_CACHE_HOME}/lf"
-    local target="${XDG_CACHE_HOME}/lf/lfdir"
-    /bin/lf -last-dir-path $target
-    cd "$(cat $target)"
+# Yazi with image preview
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    command yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd < "$tmp"
+    [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
 }

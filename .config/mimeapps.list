@@ -24,6 +24,7 @@ x-scheme-handler/discord-1361252452329848892=discord-1361252452329848892.desktop
 image/vnd.djvu+multipage=org.pwmt.zathura.desktop
 application/x-nuscript=org.gnome.gedit.desktop
 image/svg+xml=nsxiv.desktop
+image/jpeg=nsxiv.desktop
 
 [Added Associations]
 application/x-subrip=nvim.desktop;vim.desktop;
@@ -50,3 +51,4 @@ video/mp4=vlc.desktop;
 application/x-nuscript=org.gnome.gedit.desktop;
 video/x-matroska=vlc.desktop;
 application/sql=org.gnome.gedit.desktop;
+image/jpeg=nsxiv.desktop;
