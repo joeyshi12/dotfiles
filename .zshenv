@@ -6,7 +6,6 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 
 export VISUAL="nvim"
 export EDITOR="${VISUAL}"
-export TERM=xterm-256color
 
 export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME}/jupyter"

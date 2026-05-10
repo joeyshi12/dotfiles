@@ -13,10 +13,14 @@ zmodload zsh/complist
 compinit -C -d "${HOME}/.cache/zsh/zcompdump-${ZSH_VERSION}"
 _comp_options+=(globdots) # Include hidden files.
 
+# TERM override
+TERM=xterm-256color
+
 # History configuration
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE="${XDG_STATE_HOME}/zsh_history"
+
 setopt HIST_IGNORE_ALL_DUPS # Remove older duplicate entries
 setopt HIST_FIND_NO_DUPS    # Don't show duplicates in search
 setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks
@@ -29,7 +33,7 @@ setopt CORRECT              # Command correction
 
 # Vim-like key-bindings
 bindkey -v
-export KEYTIMEOUT=1
+KEYTIMEOUT=1
 bindkey -v '^?' backward-delete-char
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
