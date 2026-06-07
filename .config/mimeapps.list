@@ -52,3 +52,4 @@ application/x-nuscript=org.gnome.gedit.desktop;
 video/x-matroska=vlc.desktop;
 application/sql=org.gnome.gedit.desktop;
 image/jpeg=nsxiv.desktop;
+video/quicktime=vlc.desktop;
