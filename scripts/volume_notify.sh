@@ -7,7 +7,7 @@
 
 send_notification() {
     local volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | head -n1 | awk '{ print $2 }')
-    local width=$(bc <<< "$volume * 20 + 0.5" | cut -d "." -f1)
+    local width=$(echo "$volume * 20 + 0.5" | bc | cut -d "." -f1)
     local progress=$(seq -s "=" 0 $width | sed 's/[0-9]//g')
     local bar=$(printf '[%-20s]' $progress)
     dunstify -I ~/.dotfiles/assets/icons/audio-speakers.svg -t 1600 -r 2593 -u low "$bar"

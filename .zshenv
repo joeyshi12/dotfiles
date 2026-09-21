@@ -19,4 +19,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Redbot supports only Java 11 and 17
 #export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
-export PATH="${HOME}/.elan/bin:${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
+export PATH="${HOME}/.cargo/bin:${HOME}/.local/bin:${JAVA_HOME}/bin:${GOPATH}/bin:${PATH}"
