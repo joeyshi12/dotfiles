@@ -25,3 +25,9 @@ Dotfiles for my Arch Linux system running dwm.
     - Icons: [breeze-icons](https://archlinux.org/packages/extra/x86_64/breeze-icons/)
         - Should already be installed from `pkglist`.
 6. Apply themes and icons from the [`lxappearance`](https://archlinux.org/packages/extra/x86_64/lxappearance/) desktop application.
+
+## Colours
+
+The colour palette is defined once in `theme/palette.sh`. After editing it, run
+`~/.dotfiles/scripts/theme.sh` to regenerate the colour files for rofi, dunst, ghostty, tmux
+and nsxiv. The templates for those files are in `theme/templates`.

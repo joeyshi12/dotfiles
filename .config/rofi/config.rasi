@@ -8,14 +8,9 @@ configuration {
     matching: "fuzzy";
 }
 
+@import "colors.rasi"
+
 * {
-    bg:              #0f1825;
-    bgalt:           #253447;
-    accent:          #4a9eb8;
-    fg:              #e8f4f8;
-    fgdim:           #6b8494;
-    urgent:          #f4d06f;
-    
     background-color: transparent;
     text-color:       @fg;
     margin:           0;
