@@ -1,0 +1,8 @@
+#!/bin/sh
+# Select a region with slurp, capture it with grim and open it in satty for
+# annotation. In satty, Ctrl+c copies the image to the clipboard and Ctrl+s
+# saves it to ~/Pictures/Screenshots. Bound to Print in dwl.
+set -eu
+
+region="$(slurp)" || exit 0
+grim -g "${region}" - | satty --filename -

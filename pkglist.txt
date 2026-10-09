@@ -11,6 +11,7 @@ feh
 flameshot
 fzf
 ghostty
+grim
 imagemagick
 keepassxc
 libjpeg-turbo
@@ -21,6 +22,7 @@ networkmanager
 noto-fonts-cjk
 noto-fonts-emoji
 nsxiv
+nwg-look
 obsidian
 perl-image-exiftool
 picom
@@ -28,6 +30,7 @@ pipewire-pulse
 polkit-gnome
 ripgrep
 rofi
+satty
 slurp
 swaybg
 swayidle

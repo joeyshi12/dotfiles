@@ -19,7 +19,7 @@ rotate() {
 case "$1" in
 "C-c")      while read file; do clip image/png < "$file"; done ;;
 "C-e")      while read file; do exiv2 -q -pa pr "$file" | less & done ;;
-"C-w")      while read file; do feh --no-fehbg --bg-scale "$file"; done ;;
+"C-w")      while read file; do set-wallpaper "$file"; done ;;
 "C-comma")  rotate 270 ;;
 "C-period") rotate  90 ;;
 "C-slash")  rotate 180 ;;

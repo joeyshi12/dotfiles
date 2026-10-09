@@ -24,7 +24,20 @@ Dotfiles for my Arch Linux system running dwm.
     - Theme: https://www.gnome-look.org/p/1318133
     - Icons: [breeze-icons](https://archlinux.org/packages/extra/x86_64/breeze-icons/)
         - Should already be installed from `pkglist`.
-6. Apply themes and icons from the [`lxappearance`](https://archlinux.org/packages/extra/x86_64/lxappearance/) desktop application.
+6. Apply themes and icons with `nwg-look` in the Wayland session, or `lxappearance` in the X session.
+
+## Sessions
+
+Logging in on TTY1 starts dwl through uwsm; TTY2 starts dwm with `startx`.
+
+| Key | Action |
+|---|---|
+| Alt+p | Launcher (rofi) |
+| Alt+Shift+Return | Terminal (ghostty) |
+| Print | Screenshot a region; Ctrl+c in satty copies it, Ctrl+s saves it to `~/Pictures/Screenshots` |
+| Alt+Shift+l | Lock |
+| Alt+Shift+x | Power menu |
+| Alt+Shift+q | Log out |
 
 ## Colours
 

@@ -4,6 +4,7 @@ PartOf=graphical-session.target
 After=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg --mode stretch --image %h/.dotfiles/assets/wallpapers/tropic_island_night.png
+# ~/.local/share/wallpaper is set by set-wallpaper; fall back to the default
+ExecStart=/bin/sh -c 'w="$HOME/.local/share/wallpaper"; [ -e "$w" ] || w="$HOME/.dotfiles/assets/wallpapers/tropic_island_night.png"; exec swaybg --mode stretch --image "$w"'
 Restart=on-failure
 Slice=background-graphical.slice
