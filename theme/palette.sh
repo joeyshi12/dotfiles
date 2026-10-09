@@ -1,4 +1,4 @@
-# Colour palette shared by rofi, dunst, ghostty, tmux and nsxiv.
+# Colour palette shared by rofi, dunst, ghostty, tmux, swaylock, swayimg and dwl.
 # After editing, run scripts/theme.sh to regenerate the colour files.
 BG='#0f1825'
 BG_ALT='#253447'

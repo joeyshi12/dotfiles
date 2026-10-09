@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles for my Arch Linux system running dwm.
+Dotfiles for my Arch Linux system running [dwl](https://github.com/joeyshi12/dwl), a Wayland compositor.
 
 ![Desktop preview](/assets/preview.webp)
 
@@ -30,11 +30,12 @@ Dotfiles for my Arch Linux system running dwm.
     - Theme: https://www.gnome-look.org/p/1318133
     - Icons: [breeze-icons](https://archlinux.org/packages/extra/x86_64/breeze-icons/)
         - Should already be installed from `pkglist`.
-6. Apply themes and icons with `nwg-look` in the Wayland session, or `lxappearance` in the X session.
+6. Apply themes and icons with `nwg-look`.
 
-## Sessions
+## Session
 
-Logging in on TTY1 starts dwl through uwsm; TTY2 starts dwm with `startx`.
+Logging in on TTY1 starts dwl through uwsm. The status bar text comes from
+[dwmstatus](https://github.com/joeyshi12/dwmstatus).
 
 | Key | Action |
 |---|---|
@@ -45,8 +46,11 @@ Logging in on TTY1 starts dwl through uwsm; TTY2 starts dwm with `startx`.
 | Alt+Shift+x | Power menu |
 | Alt+Shift+q | Log out |
 
+In swayimg, Ctrl+c copies the image, Ctrl+w sets it as the wallpaper, Ctrl+comma, Ctrl+period and
+Ctrl+slash rotate the file on disk, and Shift+Delete deletes the file.
+
 ## Colours
 
 The colour palette is defined once in `theme/palette.sh`. After editing it, run
-`~/.dotfiles/scripts/theme.sh` to regenerate the colour files for rofi, dunst, ghostty, tmux
-and nsxiv. The templates for those files are in `theme/templates`.
+`~/.dotfiles/scripts/theme.sh` to regenerate the colour files for rofi, dunst, ghostty, tmux,
+swaylock, swayimg and dwl (`~/.local/src/dwl/colors.h`; rebuild dwl afterwards). The templates for those files are in `theme/templates`.

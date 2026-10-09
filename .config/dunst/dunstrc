@@ -1,7 +1,7 @@
 [global]
 # Display
 monitor = 0
-follow = mouse
+follow = none
 origin = top-right
 offset = (15, 40)
 indicate_hidden = yes

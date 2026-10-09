@@ -1,15 +1,10 @@
 #!/bin/sh
 # Set the wallpaper to the given image.
 # Usage: set-wallpaper IMAGE
-# In the Wayland session the image is linked to ~/.local/share/wallpaper and
-# the swaybg unit is restarted. In X it is set with feh.
+# Links the image to ~/.local/share/wallpaper and restarts the swaybg unit.
 set -eu
 
 image="$(realpath "$1")"
-if [ -n "${WAYLAND_DISPLAY:-}" ]; then
-    mkdir -p "${XDG_DATA_HOME:-${HOME}/.local/share}"
-    ln -sfn "${image}" "${XDG_DATA_HOME:-${HOME}/.local/share}/wallpaper"
-    systemctl --user restart swaybg.service
-else
-    feh --no-fehbg --bg-scale "${image}"
-fi
+mkdir -p "${XDG_DATA_HOME:-${HOME}/.local/share}"
+ln -sfn "${image}" "${XDG_DATA_HOME:-${HOME}/.local/share}/wallpaper"
+systemctl --user restart swaybg.service
