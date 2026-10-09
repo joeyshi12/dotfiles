@@ -38,6 +38,7 @@ tumbler
 vlc
 vlc-plugins-all
 wiremix
+wl-clipboard
 xclip
 xdg-utils
 xdotool

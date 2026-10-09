@@ -1,0 +1,17 @@
+#!/bin/sh
+# Copy standard input to the clipboard.
+# Usage: clip [MIME-TYPE]
+# Uses wl-copy in a Wayland session and xclip otherwise.
+set -eu
+
+if [ -n "${WAYLAND_DISPLAY:-}" ]; then
+    if [ $# -gt 0 ]; then
+        exec wl-copy --type "$1"
+    fi
+    exec wl-copy
+fi
+
+if [ $# -gt 0 ]; then
+    exec xclip -selection clipboard -target "$1" -in
+fi
+exec xclip -selection clipboard -in
