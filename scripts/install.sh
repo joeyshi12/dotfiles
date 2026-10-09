@@ -47,9 +47,14 @@ clone_repo "https://github.com/tmux-plugins/tpm.git" "${DOTFILES_DIR}/.config/tm
 clone_repo "https://github.com/joeyshi12/nvim.git" "${HOME}/.config/nvim"
 clone_repo "https://github.com/joeyshi12/dwm.git" "${REPO_DIR}/dwm"
 clone_repo "https://github.com/joeyshi12/dwmstatus.git" "${REPO_DIR}/dwmstatus"
+clone_repo "https://github.com/joeyshi12/dwl.git" "${REPO_DIR}/dwl"
+
+# Write colors.h into the dwl source from the palette before building it
+"${DOTFILES_DIR}/scripts/theme.sh"
 
 build_source "${REPO_DIR}/dwm"
 build_source "${REPO_DIR}/dwmstatus"
+build_source "${REPO_DIR}/dwl"
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"

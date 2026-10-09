@@ -1,0 +1,4 @@
+# Sourced by uwsm when the Wayland session starts. The variables are exported
+# to the systemd user environment, so apps started as units see them too.
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export QT_QPA_PLATFORM="wayland;xcb"

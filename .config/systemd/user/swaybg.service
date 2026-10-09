@@ -1,0 +1,9 @@
+[Unit]
+Description=Wallpaper
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swaybg --mode stretch --image %h/.dotfiles/assets/wallpapers/tropic_island_night.png
+Restart=on-failure
+Slice=background-graphical.slice

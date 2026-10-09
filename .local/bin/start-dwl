@@ -1,0 +1,5 @@
+#!/bin/sh
+# Start dwl with dwmstatus feeding the status text to the bar.
+# Run by uwsm from .zprofile. "uwsm finalize" exports WAYLAND_DISPLAY to the
+# systemd user environment and tells uwsm that dwl is ready.
+~/.local/src/dwmstatus/dwmstatus -s | ~/.local/src/dwl/dwl -s "uwsm finalize"

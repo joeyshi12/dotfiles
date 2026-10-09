@@ -1,0 +1,6 @@
+# Lock with swaylock when logind asks (loginctl lock-session, Alt+Shift+l),
+# before suspend, and after 10 minutes idle. Turn the screens off after 15.
+lock 'swaylock -f'
+before-sleep 'loginctl lock-session'
+timeout 600 'loginctl lock-session'
+timeout 900 'wlopm --off "*"' resume 'wlopm --on "*"'

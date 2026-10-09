@@ -1,0 +1,11 @@
+[Unit]
+Description=Idle and lock handler
+Documentation=man:swayidle(1)
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+# -w waits for the lock command to finish before the system suspends
+ExecStart=/usr/bin/swayidle -w
+Restart=on-failure
+Slice=background-graphical.slice
