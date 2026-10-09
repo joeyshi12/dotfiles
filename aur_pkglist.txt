@@ -1,2 +1,3 @@
 brave-bin
+vesktop-bin
 zsh-theme-powerlevel10k-git

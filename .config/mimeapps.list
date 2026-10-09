@@ -9,7 +9,7 @@ x-scheme-handler/about=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
 x-scheme-handler/discord=vesktop.desktop
 inode/directory=thunar.desktop
-application/x-zerosize=kitty.desktop
+application/x-zerosize=nvim.desktop
 application/x-7z-compressed=userapp-7z x-ZWL8C3.desktop
 image/png=nsxiv.desktop
 x-scheme-handler/chrome=brave-browser.desktop
@@ -29,7 +29,7 @@ image/jpeg=nsxiv.desktop
 [Added Associations]
 application/x-subrip=nvim.desktop;vim.desktop;
 inode/directory=thunar.desktop;
-application/x-zerosize=kitty.desktop;
+application/x-zerosize=nvim.desktop;
 application/x-7z-compressed=userapp-7z x-ZWL8C3.desktop;
 image/svg+xml=org.inkscape.Inkscape.desktop;nsxiv.desktop;org.gnome.gedit.desktop;userapp-inkview-R4TKN3.desktop;
 image/png=nsxiv.desktop;

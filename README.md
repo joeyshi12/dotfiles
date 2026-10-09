@@ -24,4 +24,4 @@ Dotfiles for my Arch Linux system running dwm.
     - Theme: https://www.gnome-look.org/p/1318133
     - Icons: [breeze-icons](https://archlinux.org/packages/extra/x86_64/breeze-icons/)
         - Should already be installed from `pkglist`.
-6. Apply themes and icons from the [`lxappearance-gtk3`](https://archlinux.org/packages/extra/x86_64/lxappearance-gtk3/) desktop application.
+6. Apply themes and icons from the [`lxappearance`](https://archlinux.org/packages/extra/x86_64/lxappearance/) desktop application.
