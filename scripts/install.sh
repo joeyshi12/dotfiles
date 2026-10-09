@@ -1,5 +1,5 @@
-#!/bin/sh
-set -eu
+#!/bin/bash
+set -euo pipefail
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 REPO_DIR="${HOME}/.local/src"
