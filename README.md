@@ -11,10 +11,16 @@ Dotfiles for my Arch Linux system running dwm.
     ```sh
     git clone https://github.com/joeyshi12/dotfiles.git ~/.dotfiles
     ```
-3. Install dependencies from the package lists.
+3. Install the packages the desktop needs.
     ```sh
     sudo pacman -S --needed - < ~/.dotfiles/pkglist.txt
-    yay -S --needed < ~/.dotfiles/aur_pkglist.txt
+    yay -S --needed - < ~/.dotfiles/aur_pkglist.txt
+    ```
+    Optionally, install the applications I use on top of it: Brave, Vesktop (Discord), OBS,
+    Obsidian, KeePassXC, VLC, zathura, bat, tldr and fastfetch.
+    ```sh
+    sudo pacman -S --needed - < ~/.dotfiles/extra_pkglist.txt
+    yay -S --needed - < ~/.dotfiles/extra_aur_pkglist.txt
     ```
 4. Install the dotfiles.
     ```sh
