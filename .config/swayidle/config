@@ -1,0 +1,4 @@
+lock 'swaylock -f'
+before-sleep 'loginctl lock-session'
+timeout 600 'loginctl lock-session'
+timeout 900 'wlopm --off "*"' resume 'wlopm --on "*"'

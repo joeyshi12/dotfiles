@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+s=$(cut -d. -f1 /proc/uptime)
+item() { printf "<span font='JetBrainsMono Nerd Font 34'>%s</span>\n<span size='small'>%s</span>|" "$1" "$2"; }
+choice="$({ item 󰌾 Lock; item 󰍃 Logout; item 󰒲 Suspend; item 󰜉 Reboot; item 󰐥 Shutdown; } \
+    | rofi -dmenu -theme ~/.config/rofi/powermenu.rasi -markup-rows -sep '|' -eh 4 \
+        -format i -no-custom -mesg "Up $((s / 3600))h $((s % 3600 / 60))m  ·  ←/→ to choose  ·  Esc to cancel")" || exit 0
+
+case "${choice}" in
+0) loginctl lock-session ;;
+1) uwsm stop ;;
+2) systemctl suspend ;;
+3) systemctl reboot ;;
+4) systemctl poweroff ;;
+esac

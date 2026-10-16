@@ -2,20 +2,14 @@ configuration {
     show-icons: true;
     display-drun: "Launch";
     display-run: "Run";
-    display-window: "Windows";
     font: "JetBrains Mono 12";
-    modi: "drun,run,window,ssh";
+    modi: "drun,run";
     matching: "fuzzy";
 }
 
+@import "colors.rasi"
+
 * {
-    bg:              #0f1825;
-    bgalt:           #253447;
-    accent:          #4a9eb8;
-    fg:              #e8f4f8;
-    fgdim:           #6b8494;
-    urgent:          #f4d06f;
-    
     background-color: transparent;
     text-color:       @fg;
     margin:           0;
@@ -45,7 +39,7 @@ prompt {
 
 entry {
     placeholder:       "Search...";
-    placeholder-color: @fgdim;
+    text-color:        @fg;
 }
 
 message {
@@ -65,8 +59,8 @@ listview {
     fixed-height: true;
     border:       1px 0 0;
     border-color: @bgalt;
-    padding:      4px;
-    scrollbar:    true;
+    padding:      4px 0;
+    scrollbar:    false;
 }
 
 element {
@@ -76,15 +70,33 @@ element {
 }
 
 element normal normal {
-    text-color: @fg;
+    background-color: transparent;
+    text-color:       @fg;
 }
 
 element normal urgent {
-    text-color: @urgent;
+    background-color: transparent;
+    text-color:       @urgent;
 }
 
 element normal active {
-    text-color: @accent;
+    background-color: transparent;
+    text-color:       @accent;
+}
+
+element alternate normal {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+element alternate urgent {
+    background-color: transparent;
+    text-color:       @urgent;
+}
+
+element alternate active {
+    background-color: transparent;
+    text-color:       @accent;
 }
 
 element selected normal {
