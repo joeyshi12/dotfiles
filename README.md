@@ -16,8 +16,8 @@ Dotfiles for my Arch Linux system running [dwl](https://github.com/joeyshi12/dwl
     sudo pacman -S --needed - < ~/.dotfiles/pkglist.txt
     yay -S --needed - < ~/.dotfiles/aur_pkglist.txt
     ```
-    Optionally, install the applications I use on top of it: Brave, Vesktop (Discord), OBS,
-    Obsidian, KeePassXC, VLC, zathura, bat, tldr and fastfetch.
+    Optionally, install the applications I use on top of it: Brave,
+    Obsidian, KeePassXC, VLC, zathura, tldr and fastfetch.
     ```sh
     sudo pacman -S --needed - < ~/.dotfiles/extra_pkglist.txt
     yay -S --needed - < ~/.dotfiles/extra_aur_pkglist.txt
