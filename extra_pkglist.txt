@@ -1,0 +1,10 @@
+bat
+fastfetch
+keepassxc
+obs-studio
+obsidian
+tldr
+vlc
+vlc-plugins-all
+zathura
+zathura-pdf-mupdf

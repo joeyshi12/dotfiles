@@ -1,0 +1,11 @@
+#!/bin/sh
+# Usage: set-wallpaper [IMAGE]. Without IMAGE, shows the last one set.
+set -eu
+link="${XDG_DATA_HOME:-${HOME}/.local/share}/wallpaper"
+if [ $# -gt 0 ]; then
+    mkdir -p "$(dirname "${link}")"
+    ln -sfn "$(realpath "$1")" "${link}"
+fi
+[ -e "${link}" ] || link="${HOME}/.dotfiles/assets/wallpapers/tropic_island_night.png"
+pkill -x swaybg || true
+setsid -f swaybg --mode stretch --image "${link}" >/dev/null 2>&1

@@ -1,5 +1,5 @@
-#!/bin/sh
-set -eu
+#!/bin/bash
+set -euo pipefail
 
 DOTFILES_DIR="${HOME}/.dotfiles"
 REPO_DIR="${HOME}/.local/src"
@@ -41,19 +41,25 @@ build_source() {
 require_cmd git
 require_cmd make
 
-mkdir -p "${HOME}/.config"
+mkdir -p "${HOME}/.config" "${HOME}/.local/bin"
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
 clone_repo "https://github.com/tmux-plugins/tpm.git" "${DOTFILES_DIR}/.config/tmux/plugins/tpm"
 clone_repo "https://github.com/joeyshi12/nvim.git" "${HOME}/.config/nvim"
-clone_repo "https://github.com/joeyshi12/dwm.git" "${REPO_DIR}/dwm"
 clone_repo "https://github.com/joeyshi12/dwmstatus.git" "${REPO_DIR}/dwmstatus"
+clone_repo "https://github.com/joeyshi12/dwl.git" "${REPO_DIR}/dwl"
 
-build_source "${REPO_DIR}/dwm"
+"${DOTFILES_DIR}/scripts/theme.sh"
+
 build_source "${REPO_DIR}/dwmstatus"
+build_source "${REPO_DIR}/dwl"
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"
-for file in .config/* .xinitrc .Xresources .zshenv; do
+for file in .config/* .zshenv; do
+    ln -sfn "${DOTFILES_DIR}/${file}" "${HOME}/${file}"
+    echo "Linked ${HOME}/${file}"
+done
+for file in .local/bin/*; do
     ln -sfn "${DOTFILES_DIR}/${file}" "${HOME}/${file}"
     echo "Linked ${HOME}/${file}"
 done

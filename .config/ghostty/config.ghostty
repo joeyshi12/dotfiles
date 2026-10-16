@@ -1,2 +1,3 @@
 window-decoration = false
 theme = Catppuccin Mocha
+config-file = colors
