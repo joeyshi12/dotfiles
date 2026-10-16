@@ -3,7 +3,7 @@
 monitor = 0
 follow = none
 origin = top-right
-offset = (15, 40)
+offset = (15, 15)
 indicate_hidden = yes
 padding = 16
 horizontal_padding = 20
