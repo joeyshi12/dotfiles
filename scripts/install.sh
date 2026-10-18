@@ -71,7 +71,6 @@ install_packages
 require_cmd make
 require_cmd makepkg
 
-clone_repo "https://github.com/tmux-plugins/tpm.git" "${DOTFILES_DIR}/.config/tmux/plugins/tpm"
 clone_repo "https://github.com/joeyshi12/nvim.git" "${HOME}/.config/nvim"
 clone_repo "https://github.com/joeyshi12/dwl-wake-patches.git" "${REPO_DIR}/dwl-wake-patches"
 clone_repo "https://github.com/joeyshi12/wakebar.git" "${REPO_DIR}/wakebar"
