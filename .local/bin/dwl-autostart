@@ -1,6 +1,6 @@
 #!/bin/sh
 # dwl uses the monitor's 60 Hz preferred mode, so switch DP-2 to 165 Hz
-wlr-randr --output DP-2 --mode 2560x1440@165Hz >/dev/null 2>&1
+wlr-randr --output DP-2 --mode 2560x1440@164.998993Hz >/dev/null 2>&1
 ~/.local/bin/set-wallpaper
 swayidle -w &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
