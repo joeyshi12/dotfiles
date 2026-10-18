@@ -53,3 +53,7 @@ wlr-randr
 base-devel
 pixman
 wayland
+python-gobject
+gtk4
+gtk4-layer-shell
+jq
