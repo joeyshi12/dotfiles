@@ -63,7 +63,7 @@ require_cmd sudo
 require_cmd pacman
 require_cmd yay
 
-mkdir -p "${HOME}/.config" "${HOME}/.local/bin"
+mkdir -p "${HOME}/.config" "${HOME}/.local/bin" "${HOME}/.local/share"
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
 
 # The desktop's hard dependencies, including base-devel for make and makepkg
@@ -88,7 +88,7 @@ for file in .config/* .zshenv; do
     ln -sfn "${DOTFILES_DIR}/${file}" "${HOME}/${file}"
     echo "Linked ${HOME}/${file}"
 done
-for file in .local/bin/*; do
+for file in .local/bin/* .local/share/*; do
     ln -sfn "${DOTFILES_DIR}/${file}" "${HOME}/${file}"
     echo "Linked ${HOME}/${file}"
 done

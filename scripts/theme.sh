@@ -13,12 +13,14 @@ set -a
 set +a
 
 # For each palette colour NAME='#rrggbb', also define NAME_HEX=rrggbb for
-# programs that do not accept the leading #.
+# programs that do not accept the leading #, and NAME_RGB=r,g,b for KDE colour schemes.
 names="$(sed -n 's/^\([A-Z_][A-Z0-9_]*\)=.*/\1/p' "${PALETTE}")"
 vars=""
 for name in ${names}; do
-    export "${name}_HEX=${!name#\#}"
-    vars="${vars} \${${name}} \${${name}_HEX}"
+    hex="${!name#\#}"
+    export "${name}_HEX=${hex}"
+    export "${name}_RGB=$((16#${hex:0:2})),$((16#${hex:2:2})),$((16#${hex:4:2}))"
+    vars="${vars} \${${name}} \${${name}_HEX} \${${name}_RGB}"
 done
 
 # Substitute only the palette variables, so other $ signs in templates are kept.
