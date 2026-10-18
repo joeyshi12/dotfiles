@@ -40,18 +40,20 @@ build_source() {
 
 require_cmd git
 require_cmd make
+require_cmd makepkg
 
 mkdir -p "${HOME}/.config" "${HOME}/.local/bin"
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
 clone_repo "https://github.com/tmux-plugins/tpm.git" "${DOTFILES_DIR}/.config/tmux/plugins/tpm"
 clone_repo "https://github.com/joeyshi12/nvim.git" "${HOME}/.config/nvim"
-clone_repo "https://github.com/joeyshi12/dwmstatus.git" "${REPO_DIR}/dwmstatus"
-clone_repo "https://github.com/joeyshi12/dwl.git" "${REPO_DIR}/dwl"
+clone_repo "https://github.com/joeyshi12/dwl-wake-patches.git" "${REPO_DIR}/dwl-wake-patches"
+clone_repo "https://github.com/joeyshi12/wakebar.git" "${REPO_DIR}/wakebar"
 
 "${DOTFILES_DIR}/scripts/theme.sh"
 
-build_source "${REPO_DIR}/dwmstatus"
-build_source "${REPO_DIR}/dwl"
+# dwl is built as the dwl-wake package so pacman tracks it and keeps wlroots0.20 installed
+(cd "${REPO_DIR}/dwl-wake-patches" && makepkg -si --needed --noconfirm)
+build_source "${REPO_DIR}/wakebar"
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"

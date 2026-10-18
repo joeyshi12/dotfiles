@@ -1,2 +1,2 @@
 #!/bin/sh
-~/.local/src/dwmstatus/dwmstatus -s | ~/.local/src/dwl/dwl -s ~/.local/bin/dwl-autostart
+exec dwl -s ~/.local/bin/dwl-autostart
