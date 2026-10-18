@@ -23,11 +23,12 @@ window {
     width:            600;
     border:           2px;
     border-color:     @accent;
-    border-radius:    0;
+    border-radius:    12px;
 }
 
 inputbar {
     padding:          12px;
+    border-radius:    10px 10px 0 0;
     spacing:          8px;
     children:         [entry, prompt];
     background-color: @bgalt;
@@ -59,12 +60,13 @@ listview {
     fixed-height: true;
     border:       1px 0 0;
     border-color: @bgalt;
-    padding:      4px 0;
+    padding:      6px;
     scrollbar:    false;
 }
 
 element {
-    padding:          4px 8px;
+    padding:          6px 10px;
+    border-radius:    8px;
     background-color: transparent;
     children:         [element-text, element-icon];
 }

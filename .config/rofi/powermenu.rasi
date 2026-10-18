@@ -37,7 +37,7 @@ element {
     padding:          28px 0 22px;
     border:           2px;
     border-color:     @bgalt;
-    border-radius:    24px;
+    border-radius:    12px;
     background-color: @bgalt-glass;
 }
 
