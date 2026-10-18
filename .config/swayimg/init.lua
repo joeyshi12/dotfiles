@@ -7,12 +7,12 @@ swayimg.text.background = 0xcc0f1825
 swayimg.text.shadow = 0x00000000
 
 swayimg.viewer.set_window_background(0xff0f1825)
-swayimg.viewer.mark_color = 0xff4a9eb8
+swayimg.viewer.mark_color = 0xff418aa2
 
 swayimg.gallery.window_color = 0xff0f1825
 swayimg.gallery.unselected_color = 0xff0f1825
 swayimg.gallery.selected_color = 0xff253447
-swayimg.gallery.border_color = 0xff4a9eb8
+swayimg.gallery.border_color = 0xff418aa2
 
 -- Rotating replaces the file, which the watcher treats as a removal
 swayimg.imagelist.fsmon = false
