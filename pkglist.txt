@@ -50,3 +50,6 @@ zsh
 zsh-autosuggestions
 qt6-wayland
 wlr-randr
+base-devel
+pixman
+wayland

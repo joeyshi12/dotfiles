@@ -29,6 +29,26 @@ clone_repo() {
     echo "Cloned ${repo} -> ${target}"
 }
 
+# Prints the package names in a package list, skipping blank lines and comments
+read_pkglist() {
+    sed -e 's/#.*//' -e 's/[[:space:]]//g' -e '/^$/d' "$1"
+}
+
+install_packages() {
+    local pkgs aur_pkgs
+    mapfile -t pkgs < <(read_pkglist "${DOTFILES_DIR}/pkglist.txt")
+    mapfile -t aur_pkgs < <(read_pkglist "${DOTFILES_DIR}/aur_pkglist.txt")
+    if ! sudo pacman -S --needed "${pkgs[@]}"; then
+        echo "Error: failed to install the packages in pkglist.txt" >&2
+        exit 1
+    fi
+    if [ "${#aur_pkgs[@]}" -gt 0 ] && ! yay -S --needed "${aur_pkgs[@]}"; then
+        echo "Error: failed to install the packages in aur_pkglist.txt" >&2
+        exit 1
+    fi
+    echo "Installed the packages in pkglist.txt and aur_pkglist.txt"
+}
+
 build_source() {
     local target="$1"
     if ! make -C "${target}"; then
@@ -39,11 +59,18 @@ build_source() {
 }
 
 require_cmd git
-require_cmd make
-require_cmd makepkg
+require_cmd sudo
+require_cmd pacman
+require_cmd yay
 
 mkdir -p "${HOME}/.config" "${HOME}/.local/bin"
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
+
+# The desktop's hard dependencies, including base-devel for make and makepkg
+install_packages
+require_cmd make
+require_cmd makepkg
+
 clone_repo "https://github.com/tmux-plugins/tpm.git" "${DOTFILES_DIR}/.config/tmux/plugins/tpm"
 clone_repo "https://github.com/joeyshi12/nvim.git" "${HOME}/.config/nvim"
 clone_repo "https://github.com/joeyshi12/dwl-wake-patches.git" "${REPO_DIR}/dwl-wake-patches"

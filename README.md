@@ -7,25 +7,21 @@ built from [dwl-wake-patches](https://github.com/joeyshi12/dwl-wake-patches).
 
 ## Getting started
 
-1. Verify that your system has `git`, `make`, and [`yay`](https://github.com/Jguer/yay?tab=readme-ov-file#installation) installed.
+1. Verify that your system has `git`, `sudo`, and [`yay`](https://github.com/Jguer/yay?tab=readme-ov-file#installation) installed.
 2. Clone the repository.
     ```sh
     git clone https://github.com/joeyshi12/dotfiles.git ~/.dotfiles
     ```
-3. Install the packages the desktop needs.
+3. Install the dotfiles. This first installs the packages the desktop needs from `pkglist.txt` and
+   `aur_pkglist.txt`, then builds dwl and wakebar.
     ```sh
-    sudo pacman -S --needed - < ~/.dotfiles/pkglist.txt
-    yay -S --needed - < ~/.dotfiles/aur_pkglist.txt
+    ~/.dotfiles/scripts/install.sh
     ```
-    Optionally, install the applications I use on top of it: Brave,
-    Obsidian, KeePassXC, VLC, zathura, tldr and fastfetch.
+4. Optionally, install the applications I use on top of it: Brave,
+   Obsidian, KeePassXC, VLC, zathura, tldr and fastfetch.
     ```sh
     sudo pacman -S --needed - < ~/.dotfiles/extra_pkglist.txt
     yay -S --needed - < ~/.dotfiles/extra_aur_pkglist.txt
-    ```
-4. Install the dotfiles.
-    ```sh
-    ~/.dotfiles/scripts/install.sh
     ```
 5. Unpack any custom themes and icons to `~/.local/share/themes` and `~/.local/share/icons` respectively
     - Theme: https://www.gnome-look.org/p/1318133
