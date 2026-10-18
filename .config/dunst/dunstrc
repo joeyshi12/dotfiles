@@ -12,7 +12,7 @@ separator_height = 2
 separator_color = frame
 transparency = 0
 sort = yes
-idle_threshold = 120
+idle_threshold = 0
 
 # Text
 font = monospace 12
