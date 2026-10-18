@@ -1,11 +1,11 @@
 #!/bin/bash
-# Render theme/templates into the repo and theme/dwl/colors.h into the dwl source.
+# Render theme/templates into the repo and theme/dwl/colors.h into the dwl build and wakebar.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PALETTE="${ROOT_DIR}/theme/palette.sh"
 TEMPLATE_DIR="${ROOT_DIR}/theme/templates"
-DWL_DIR="${HOME}/.local/src/dwl"
+COLORS_H_DIRS=("${HOME}/.local/src/dwl-wake-patches" "${HOME}/.local/src/wakebar")
 
 set -a
 # shellcheck source=theme/palette.sh
@@ -33,6 +33,8 @@ find . -type f | sort | while read -r template; do
     render "${template}" "${ROOT_DIR}/${template#./}"
 done
 
-if [ -d "${DWL_DIR}" ]; then
-    render "${ROOT_DIR}/theme/dwl/colors.h" "${DWL_DIR}/colors.h"
-fi
+for dir in "${COLORS_H_DIRS[@]}"; do
+    if [ -d "${dir}" ]; then
+        render "${ROOT_DIR}/theme/dwl/colors.h" "${dir}/colors.h"
+    fi
+done

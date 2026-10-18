@@ -1,6 +1,7 @@
 # dotfiles
 
-Dotfiles for my Arch Linux system running [dwl](https://github.com/joeyshi12/dwl), a Wayland compositor.
+Dotfiles for my Arch Linux system running [dwl](https://codeberg.org/dwl/dwl), a Wayland compositor,
+built from [dwl-wake-patches](https://github.com/joeyshi12/dwl-wake-patches).
 
 ![Desktop preview](/assets/preview.webp)
 
@@ -34,8 +35,8 @@ Dotfiles for my Arch Linux system running [dwl](https://github.com/joeyshi12/dwl
 
 ## Session
 
-Logging in on TTY1 starts dwl through uwsm. The status bar text comes from
-[dwmstatus](https://github.com/joeyshi12/dwmstatus).
+Logging in on TTY1 starts dwl through uwsm. The bar is
+[wakebar](https://github.com/joeyshi12/wakebar).
 
 | Key | Action |
 |---|---|
@@ -52,4 +53,6 @@ Ctrl+slash rotate the file on disk, and Shift+Delete deletes the file.
 
 The colour palette is defined once in `theme/palette.sh`. After editing it, run
 `~/.dotfiles/scripts/theme.sh` to regenerate the colour files for rofi, dunst, ghostty, tmux,
-swaylock, swayimg and dwl (`~/.local/src/dwl/colors.h`; rebuild dwl afterwards). The templates for those files are in `theme/templates`.
+swaylock, swayimg, dwl and wakebar (`colors.h` in `~/.local/src/dwl-wake-patches` and
+`~/.local/src/wakebar`; afterwards run `makepkg -si` in the first and `make` in the second).
+The templates for those files are in `theme/templates`.
