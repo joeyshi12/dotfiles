@@ -26,6 +26,7 @@ application/x-nuscript=org.gnome.gedit.desktop
 image/svg+xml=swayimg.desktop
 image/jpeg=swayimg.desktop
 video/mp4=vlc.desktop;
+x-scheme-handler/discord-1345366770436800533=discord-1345366770436800533.desktop
 
 [Added Associations]
 application/x-subrip=nvim.desktop;vim.desktop;

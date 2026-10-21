@@ -1,11 +1,13 @@
 #!/bin/bash
-# Render theme/templates into the repo and theme/dwl/colors.h into the dwl build and wakebar.
+# Render theme/templates into the repo, theme/dwl/colors.h into the dwl build and wakebar,
+# and the Vesktop theme into its themes folder.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PALETTE="${ROOT_DIR}/theme/palette.sh"
 TEMPLATE_DIR="${ROOT_DIR}/theme/templates"
 COLORS_H_DIRS=("${HOME}/.local/src/dwl" "${HOME}/.local/src/wakebar")
+VESKTOP_DIR="${HOME}/.config/vesktop"
 
 set -a
 # shellcheck source=theme/palette.sh
@@ -40,3 +42,7 @@ for dir in "${COLORS_H_DIRS[@]}"; do
         render "${ROOT_DIR}/theme/dwl/colors.h" "${dir}/colors.h"
     fi
 done
+
+if [ -d "${VESKTOP_DIR}" ]; then
+    render "${ROOT_DIR}/theme/vesktop/WakeNight.theme.css" "${VESKTOP_DIR}/themes/WakeNight.theme.css"
+fi
