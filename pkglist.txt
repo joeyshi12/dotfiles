@@ -41,6 +41,7 @@ wiremix
 wl-clipboard
 wlopm
 wlroots0.20
+scenefx
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
 xdg-utils
