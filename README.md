@@ -1,7 +1,7 @@
 # dotfiles
 
 Dotfiles for my Arch Linux system running [dwl](https://codeberg.org/dwl/dwl), a Wayland compositor,
-built from [dwl-wake-patches](https://github.com/joeyshi12/dwl-wake-patches).
+built from [my fork](https://github.com/joeyshi12/dwl).
 
 ![Desktop preview](/assets/preview.webp)
 
@@ -49,7 +49,7 @@ Ctrl+slash rotate the file on disk, and Shift+Delete deletes the file.
 
 The colour palette is defined once in `theme/palette.sh`. After editing it, run
 `~/.dotfiles/scripts/theme.sh` to regenerate the colour files for rofi, dunst, ghostty, tmux,
-swaylock, swayimg, dwl and wakebar (`colors.h` in `~/.local/src/dwl-wake-patches` and
-`~/.local/src/wakebar`; afterwards run `makepkg -si` in the first and `make` in the second),
+swaylock, swayimg, dwl and wakebar (`colors.h` in `~/.local/src/dwl` and `~/.local/src/wakebar`;
+afterwards run `make && sudo make install` in the first and `make` in the second),
 and the WakeNight colour scheme for Qt (qt6ct) and KDE apps such as Dolphin.
 The templates for those files are in `theme/templates`.

@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PALETTE="${ROOT_DIR}/theme/palette.sh"
 TEMPLATE_DIR="${ROOT_DIR}/theme/templates"
-COLORS_H_DIRS=("${HOME}/.local/src/dwl-wake-patches" "${HOME}/.local/src/wakebar")
+COLORS_H_DIRS=("${HOME}/.local/src/dwl" "${HOME}/.local/src/wakebar")
 
 set -a
 # shellcheck source=theme/palette.sh
