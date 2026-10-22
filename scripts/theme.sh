@@ -1,12 +1,12 @@
 #!/bin/bash
-# Render theme/templates into the repo, theme/dwl/colors.h into the dwl build and wakebar,
-# and the Vesktop theme into its themes folder.
+# Render theme/templates into the repo, theme/dwl/colors.h into the dwl build,
+# the Vesktop theme into its themes folder, and the GTK 3 and 4 colours into ~/.config/gtk-*.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PALETTE="${ROOT_DIR}/theme/palette.sh"
 TEMPLATE_DIR="${ROOT_DIR}/theme/templates"
-COLORS_H_DIRS=("${HOME}/.local/src/dwl" "${HOME}/.local/src/wakebar")
+COLORS_H_DIRS=("${HOME}/.local/src/dwl")
 VESKTOP_DIR="${HOME}/.config/vesktop"
 
 set -a
@@ -41,6 +41,10 @@ for dir in "${COLORS_H_DIRS[@]}"; do
     if [ -d "${dir}" ]; then
         render "${ROOT_DIR}/theme/dwl/colors.h" "${dir}/colors.h"
     fi
+done
+
+for gtk in gtk-3.0 gtk-4.0; do
+    render "${ROOT_DIR}/theme/gtk/gtk.css" "${HOME}/.config/${gtk}/gtk.css"
 done
 
 if [ -d "${VESKTOP_DIR}" ]; then

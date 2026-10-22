@@ -49,15 +49,6 @@ install_packages() {
     echo "Installed the packages in pkglist.txt and aur_pkglist.txt"
 }
 
-build_source() {
-    local target="$1"
-    if ! make -C "${target}"; then
-        echo "Error: failed to build ${target}" >&2
-        exit 1
-    fi
-    echo "Built ${target}"
-}
-
 require_cmd git
 require_cmd sudo
 require_cmd pacman
@@ -66,22 +57,28 @@ require_cmd yay
 mkdir -p "${HOME}/.config" "${HOME}/.local/bin" "${HOME}/.local/share"
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
 
-# The desktop's hard dependencies, including base-devel for make
+# The desktop's hard dependencies, including base-devel for make and rust for cargo
 install_packages
 require_cmd make
+require_cmd cargo
 
 clone_repo "https://github.com/joeyshi12/nvim.git" "${HOME}/.config/nvim"
 clone_repo "https://github.com/joeyshi12/dwl.git" "${REPO_DIR}/dwl"
-clone_repo "https://github.com/joeyshi12/wakebar.git" "${REPO_DIR}/wakebar"
 
 "${DOTFILES_DIR}/scripts/theme.sh"
 
-build_source "${REPO_DIR}/dwl"
-if ! sudo make -C "${REPO_DIR}/dwl" install; then
+if ! make -C "${REPO_DIR}/dwl" || ! sudo make -C "${REPO_DIR}/dwl" install; then
     echo "Error: failed to install ${REPO_DIR}/dwl" >&2
     exit 1
 fi
-build_source "${REPO_DIR}/wakebar"
+
+# The desktop shell and the lock screen, installed to ~/.cargo/bin
+for repo in wakeshell wakelock; do
+    if ! cargo install --locked --git "https://github.com/joeyshi12/${repo}"; then
+        echo "Error: failed to install ${repo}" >&2
+        exit 1
+    fi
+done
 
 # Create softlinks
 pushd "${DOTFILES_DIR}"
@@ -94,4 +91,10 @@ for file in .local/bin/* .local/share/*; do
     echo "Linked ${HOME}/${file}"
 done
 popd
+
+# wakeshell runs as a user service that starts with the graphical session
+mkdir -p "${HOME}/.config/systemd/user"
+ln -sfn "${DOTFILES_DIR}/systemd/wakeshell.service" "${HOME}/.config/systemd/user/wakeshell.service"
+systemctl --user daemon-reload
+systemctl --user enable wakeshell.service
 echo "Finished installing dotfiles"

@@ -1,2 +1,2 @@
-lock 'swaylock -f'
+lock 'wakelock'
 before-sleep 'loginctl lock-session'

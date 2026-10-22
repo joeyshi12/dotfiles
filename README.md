@@ -12,8 +12,8 @@ built from [my fork](https://github.com/joeyshi12/dwl).
     ```sh
     git clone https://github.com/joeyshi12/dotfiles.git ~/.dotfiles
     ```
-3. Install the dotfiles. This first installs the packages the desktop needs from `pkglist.txt` and
-   `aur_pkglist.txt`, then builds dwl and wakebar.
+3. Install the dotfiles. This first installs core packages for the desktop
+   and builds dwl in `~/.local/src/dwl`
     ```sh
     ~/.dotfiles/scripts/install.sh
     ```
@@ -23,33 +23,39 @@ built from [my fork](https://github.com/joeyshi12/dwl).
     sudo pacman -S --needed - < ~/.dotfiles/extra_pkglist.txt
     yay -S --needed - < ~/.dotfiles/extra_aur_pkglist.txt
     ```
-5. Unpack any custom themes and icons to `~/.local/share/themes` and `~/.local/share/icons` respectively
-    - Theme: https://www.gnome-look.org/p/1318133
-    - Icons: [breeze-icons](https://archlinux.org/packages/extra/x86_64/breeze-icons/)
-        - Should already be installed from `pkglist`.
-6. Apply themes and icons with `nwg-look`.
+5. In `nwg-look`, choose the `adw-gtk3-dark` GTK theme, the `breeze-dark` icons and the `Adwaita`
+   cursor at size 24 (all installed from `pkglist.txt`). `scripts/theme.sh` writes the palette
+   colours into `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css`, which adw-gtk3 and
+   libadwaita apps read.
 
 ## Session
 
-Logging in on TTY1 starts dwl through uwsm. The bar is
-[wakebar](https://github.com/joeyshi12/wakebar).
+Logging in on TTY1 starts dwl through uwsm. The desktop shell is wakeshell, configured in
+`.config/wakeshell`: the wallpaper, the bar, the launcher, notifications, the volume popup, the
+power menu, the polkit password dialog and the screen-share picker. The lock screen is wakelock, a
+separate program. The bar reads dwl's tags and window titles over dwl's ipc protocol. The power
+menu, polkit dialog and lock screen show a blurred copy of the screen behind them.
+
+The look borrows one thing from The Wind Waker's cel shading: windows and cards have a thick dark
+outline and a hard shadow offset down and right. dwl draws the window shadows, which show around
+floating windows.
+
+In the bar, clicking a tag views it and right-clicking adds it to or removes it from the view.
+Clicking the layout symbol switches to the previous layout, and right-clicking it to monocle.
+Middle-clicking the title zooms the focused window, and middle-clicking the status opens a terminal.
 
 | Key | Action |
 |---|---|
-| Alt+p | Launcher (rofi) |
+| Alt+p | Launcher |
 | Alt+Shift+Return | Terminal (ghostty) |
 | Print | Screenshot a region; Ctrl+c in satty copies it, Ctrl+s saves it to `~/Pictures/Screenshots` |
 | Alt+Shift+l | Lock |
 | Alt+Shift+q | Power menu (lock, log out, suspend, reboot, shut down) |
 
-In swayimg, Ctrl+c copies the image, Ctrl+w sets it as the wallpaper, Ctrl+comma, Ctrl+period and
-Ctrl+slash rotate the file on disk, and Shift+Delete deletes the file.
-
 ## Colours
 
 The colour palette is defined once in `theme/palette.sh`. After editing it, run
-`~/.dotfiles/scripts/theme.sh` to regenerate the colour files for rofi, dunst, ghostty, tmux,
-swaylock, swayimg, dwl and wakebar (`colors.h` in `~/.local/src/dwl` and `~/.local/src/wakebar`;
-afterwards run `make && sudo make install` in the first and `make` in the second),
-and the WakeNight colour scheme for Qt (qt6ct) and KDE apps such as Dolphin.
+`~/.dotfiles/scripts/theme.sh` to regenerate the colour files for wakeshell and wakelock, ghostty, tmux,
+swayimg, dwl (`colors.h` in `~/.local/src/dwl`; afterwards run `make && sudo make install` there),
+the GTK 3 and 4 colours, and the WakeNight colour scheme for Qt (qt6ct) and KDE apps such as Dolphin.
 The templates for those files are in `theme/templates`.

@@ -5,3 +5,4 @@
 #define COL_FG     0x${FG_HEX}ff
 #define COL_FG_DIM 0x${FG_DIM_HEX}ff
 #define COL_URGENT 0x${URGENT_HEX}ff
+#define COL_SHADOW 0x${SHADOW_HEX}ff

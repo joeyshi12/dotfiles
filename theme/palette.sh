@@ -1,4 +1,4 @@
-# Colour palette shared by rofi, dunst, ghostty, tmux, swaylock, swayimg, dwl, wakebar and Qt/KDE (WakeNight).
+# Colour palette shared by wakeshell, wakelock, ghostty, tmux, swayimg, dwl, GTK and Qt/KDE (WakeNight).
 # After editing, run scripts/theme.sh to regenerate the colour files.
 BG='#0f1825'
 BG_ALT='#253447'
@@ -23,3 +23,5 @@ POSITIVE='#82c896'
 NEGATIVE_DARK='#781414'
 URGENT_DARK='#5a4600'
 POSITIVE_DARK='#0a501e'
+# Near-black for the thick outlines and hard cel-shaded shadows under windows and cards
+SHADOW='#05090f'

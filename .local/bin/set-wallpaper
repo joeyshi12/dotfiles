@@ -1,11 +1,9 @@
 #!/bin/sh
-# Usage: set-wallpaper [IMAGE]. Without IMAGE, shows the last one set.
+# Usage: set-wallpaper IMAGE. Points ~/.local/share/wallpaper at IMAGE and tells the wakeshell
+# wallpaper to show it.
 set -eu
+[ $# -gt 0 ] || { echo "usage: set-wallpaper IMAGE" >&2; exit 1; }
 link="${XDG_DATA_HOME:-${HOME}/.local/share}/wallpaper"
-if [ $# -gt 0 ]; then
-    mkdir -p "$(dirname "${link}")"
-    ln -sfn "$(realpath "$1")" "${link}"
-fi
-[ -e "${link}" ] || link="${HOME}/.dotfiles/assets/wallpapers/tropic_island_night.png"
-pkill -x swaybg || true
-setsid -f swaybg --mode stretch --image "${link}" >/dev/null 2>&1
+mkdir -p "$(dirname "${link}")"
+ln -sfn "$(realpath "$1")" "${link}"
+wakeshell msg wallpaper reload

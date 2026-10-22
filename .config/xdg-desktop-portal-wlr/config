@@ -1,4 +1,4 @@
 [screencast]
-# Pick screens and windows in rofi; see ~/.local/bin/share-picker
+# Pick screens and windows in wakeshell's share picker
 chooser_type=dmenu
-chooser_cmd=$HOME/.local/bin/share-picker
+chooser_cmd=wakeshell share-chooser
