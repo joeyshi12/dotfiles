@@ -24,9 +24,10 @@ built from [my fork](https://github.com/joeyshi12/dwl).
     yay -S --needed - < ~/.dotfiles/extra_aur_pkglist.txt
     ```
 5. In `nwg-look`, choose the `adw-gtk3-dark` GTK theme, the `breeze-dark` icons and the `Adwaita`
-   cursor at size 24 (all installed from `pkglist.txt`). `scripts/theme.sh` writes the palette
-   colours into `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css`, which adw-gtk3 and
-   libadwaita apps read.
+   cursor at size 24 (all installed from `pkglist.txt`), then run `scripts/theme.sh` again: nwg-look
+   links `~/.config/gtk-4.0/gtk.css` to adw-gtk3's, and theme.sh replaces that link. It writes the
+   palette colours into `~/.config/gtk-3.0/gtk.css` and `~/.config/gtk-4.0/gtk.css`, which adw-gtk3
+   and libadwaita apps read.
 
 ## Session
 
@@ -48,14 +49,15 @@ Middle-clicking the title zooms the focused window, and middle-clicking the stat
 |---|---|
 | Alt+p | Launcher |
 | Alt+Shift+Return | Terminal (ghostty) |
-| Print | Screenshot a region; Ctrl+c in satty copies it, Ctrl+s saves it to `~/Pictures/Screenshots` |
+| Print | Screenshot a region in Flameshot; Ctrl+c copies it, Ctrl+s saves it to `~/Pictures/Screenshots` |
 | Alt+Shift+l | Lock |
 | Alt+Shift+q | Power menu (lock, log out, suspend, reboot, shut down) |
 
 ## Colours
 
 The colour palette is defined once in `theme/palette.sh`. After editing it, run
-`~/.dotfiles/scripts/theme.sh` to regenerate the colour files for wakeshell and wakelock, ghostty, tmux,
+`~/.dotfiles/scripts/theme.sh` to regenerate the colour files for ghostty, tmux,
 swayimg, dwl (`colors.h` in `~/.local/src/dwl`; afterwards run `make && sudo make install` there),
-the GTK 3 and 4 colours, and the WakeNight colour scheme for Qt (qt6ct) and KDE apps such as Dolphin.
+the GTK 3 and 4 colours (the GTK 4 file also holds the `--wakenight-*` variables that wakeshell and
+wakelock use), Flameshot's colours and save folder, and the WakeNight colour scheme for Qt (qt6ct) and KDE apps such as Dolphin.
 The templates for those files are in `theme/templates`.

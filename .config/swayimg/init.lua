@@ -41,7 +41,6 @@ swayimg.viewer.on_key("Ctrl+c", function()
     os.execute("wl-copy --type image/png < " .. quote(image.path))
   end
 end)
-swayimg.viewer.on_key("Ctrl+w", function() run_on_image("set-wallpaper") end)
 swayimg.viewer.on_key("Ctrl+comma", function() rotate(270) end)
 swayimg.viewer.on_key("Ctrl+period", function() rotate(90) end)
 swayimg.viewer.on_key("Ctrl+slash", function() rotate(180) end)
@@ -51,3 +50,47 @@ swayimg.viewer.on_key("Shift+Delete", function()
     swayimg.imagelist.remove(image.path)
   end
 end)
+
+-- Vim keys, as in nsxiv: n/p (or Space) next and previous, g/G first and last, hjkl pan a fifth
+-- of the window, HJKL jump to an edge, w fit, q quit. In the gallery hjkl move the selection.
+local function pan(dx, dy)
+  local win = swayimg.get_window_size()
+  local pos = swayimg.viewer.get_position()
+  swayimg.viewer.set_abs_position(math.floor(pos.x + dx * win.width), math.floor(pos.y + dy * win.height))
+end
+
+-- Only along an axis where the image is bigger than the window
+local function edge(side)
+  local image = swayimg.viewer.get_image()
+  if not image then return end
+  local win = swayimg.get_window_size()
+  local pos = swayimg.viewer.get_position()
+  local w, h = image.width * swayimg.viewer.scale, image.height * swayimg.viewer.scale
+  local x, y = pos.x, pos.y
+  if side == "left" and w > win.width then x = 0 end
+  if side == "right" and w > win.width then x = math.floor(win.width - w) end
+  if side == "top" and h > win.height then y = 0 end
+  if side == "bottom" and h > win.height then y = math.floor(win.height - h) end
+  swayimg.viewer.set_abs_position(x, y)
+end
+
+for key, dir in pairs({ n = "next", space = "next", p = "prev", g = "first", ["Shift+g"] = "last" }) do
+  swayimg.viewer.on_key(key, function() swayimg.viewer.open(dir) end)
+end
+swayimg.viewer.on_key("h", function() pan(0.2, 0) end)
+swayimg.viewer.on_key("l", function() pan(-0.2, 0) end)
+swayimg.viewer.on_key("k", function() pan(0, 0.2) end)
+swayimg.viewer.on_key("j", function() pan(0, -0.2) end)
+swayimg.viewer.on_key("Shift+h", function() edge("left") end)
+swayimg.viewer.on_key("Shift+l", function() edge("right") end)
+swayimg.viewer.on_key("Shift+k", function() edge("top") end)
+swayimg.viewer.on_key("Shift+j", function() edge("bottom") end)
+swayimg.viewer.on_key("w", function() swayimg.viewer.set_fix_scale("fit") end)
+swayimg.viewer.on_key("q", function() swayimg.exit() end)
+
+for key, dir in pairs({ h = "left", j = "down", k = "up", l = "right", g = "first", ["Shift+g"] = "last",
+                        ["Ctrl+d"] = "pgdown", ["Ctrl+u"] = "pgup" }) do
+  swayimg.gallery.on_key(key, function() swayimg.gallery.select(dir) end)
+end
+swayimg.gallery.on_key("q", function() swayimg.exit() end)
+swayimg.slideshow.on_key("q", function() swayimg.exit() end)

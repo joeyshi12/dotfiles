@@ -25,6 +25,7 @@ image/vnd.djvu+multipage=org.pwmt.zathura.desktop
 application/x-nuscript=org.gnome.gedit.desktop
 image/svg+xml=swayimg.desktop
 image/jpeg=swayimg.desktop
+image/webp=swayimg.desktop
 video/mp4=vlc.desktop;
 x-scheme-handler/discord-1345366770436800533=discord-1345366770436800533.desktop
 

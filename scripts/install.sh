@@ -55,6 +55,8 @@ require_cmd pacman
 require_cmd yay
 
 mkdir -p "${HOME}/.config" "${HOME}/.local/bin" "${HOME}/.local/share"
+# Flameshot saves here (see theme/flameshot/flameshot.ini)
+mkdir -p "${HOME}/Pictures/Screenshots"
 clone_repo "https://github.com/joeyshi12/dotfiles.git" "${DOTFILES_DIR}"
 
 # The desktop's hard dependencies, including base-devel for make and rust for cargo

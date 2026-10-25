@@ -1,9 +1,0 @@
-#!/bin/sh
-# Usage: set-wallpaper IMAGE. Points ~/.local/share/wallpaper at IMAGE and tells the wakeshell
-# wallpaper to show it.
-set -eu
-[ $# -gt 0 ] || { echo "usage: set-wallpaper IMAGE" >&2; exit 1; }
-link="${XDG_DATA_HOME:-${HOME}/.local/share}/wallpaper"
-mkdir -p "$(dirname "${link}")"
-ln -sfn "$(realpath "$1")" "${link}"
-wakeshell msg wallpaper reload

@@ -1,0 +1,13 @@
+
+/* The palette as CSS variables, for GTK 4 only (GTK 3 has none). wakeshell and wakelock style
+ * themselves with these. */
+:root {
+    --wakenight-bg: ${BG};
+    --wakenight-bg-alt: ${BG_ALT};
+    --wakenight-accent: ${ACCENT};
+    --wakenight-fg: ${FG};
+    --wakenight-fg-dim: ${FG_DIM};
+    --wakenight-fg-muted: ${FG_MUTED};
+    --wakenight-urgent: ${URGENT};
+    --wakenight-shadow: ${SHADOW};
+}

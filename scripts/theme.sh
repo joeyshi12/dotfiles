@@ -1,6 +1,7 @@
 #!/bin/bash
 # Render theme/templates into the repo, theme/dwl/colors.h into the dwl build,
-# the Vesktop theme into its themes folder, and the GTK 3 and 4 colours into ~/.config/gtk-*.
+# the Vesktop theme into its themes folder, and the GTK 3 and 4 colours and the
+# Flameshot settings into ~/.config.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
@@ -25,9 +26,11 @@ for name in ${names}; do
     vars="${vars} \${${name}} \${${name}_HEX} \${${name}_RGB}"
 done
 
-# Substitute only the palette variables, so other $ signs in templates are kept.
+# Substitute only the palette variables, so other $ signs in templates are kept. The target is
+# removed first, so a symlink (as nwg-look leaves in ~/.config/gtk-4.0) is replaced, not followed.
 render() {
     mkdir -p "$(dirname "$2")"
+    rm -f "$2"
     envsubst "${vars}" < "$1" > "$2"
     echo "Wrote $2"
 }
@@ -43,9 +46,11 @@ for dir in "${COLORS_H_DIRS[@]}"; do
     fi
 done
 
-for gtk in gtk-3.0 gtk-4.0; do
-    render "${ROOT_DIR}/theme/gtk/gtk.css" "${HOME}/.config/${gtk}/gtk.css"
-done
+render "${ROOT_DIR}/theme/gtk/gtk.css" "${HOME}/.config/gtk-3.0/gtk.css"
+render <(cat "${ROOT_DIR}/theme/gtk/gtk.css" "${ROOT_DIR}/theme/gtk/variables.css") "${HOME}/.config/gtk-4.0/gtk.css"
+
+# Flameshot needs an absolute save path, so it is written per user like the GTK colours
+vars="${vars} \${HOME}" render "${ROOT_DIR}/theme/flameshot/flameshot.ini" "${HOME}/.config/flameshot/flameshot.ini"
 
 if [ -d "${VESKTOP_DIR}" ]; then
     render "${ROOT_DIR}/theme/vesktop/WakeNight.theme.css" "${VESKTOP_DIR}/themes/WakeNight.theme.css"

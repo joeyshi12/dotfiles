@@ -14,8 +14,7 @@ nwg-look
 perl-image-exiftool
 pipewire-pulse
 ripgrep
-satty
-slurp
+flameshot
 swayidle
 swayimg
 dolphin
