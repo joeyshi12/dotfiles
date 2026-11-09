@@ -1,6 +1,8 @@
 #!/bin/sh
-# dwl uses the monitor's 60 Hz preferred mode, so switch DP-2 to 165 Hz
-wlr-randr --output DP-2 --mode 2560x1440@164.998993Hz >/dev/null 2>&1
+# dwl uses the monitor's 60 Hz preferred mode, so switch to 180 Hz.
+for out in DP-3 DP-2; do
+	wlr-randr --output "$out" --mode 2560x1440@180.000000Hz >/dev/null 2>&1 && break
+done
 swayidle -w &
 # wakeshell runs as the wakeshell.service user unit, which uwsm starts
 # with graphical-session.target and systemd restarts if it crashes

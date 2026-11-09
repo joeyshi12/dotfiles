@@ -1,4 +1,3 @@
-bat
 fastfetch
 keepassxc
 obs-studio
